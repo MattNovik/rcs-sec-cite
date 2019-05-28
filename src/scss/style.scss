@@ -1,9 +1,30 @@
+@font-face {
+	font-family: "Cuprum";
+	src: url("fonts/cuprum_[allfont.ru].ttf");
+	font-weight:600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Cumprum-bold";
+	src:url("fonts/cuprum-bold_[allfont.ru].ttf");
+	font-weight:900;
+	font-style:normal;
+}
+@font-face {
+	font-family: "Cumprum-italic";
+	src:url("fonts/cuprum-italic_[allfont.ru].ttf");
+	font-weight:600;
+	font-style:italic;
+}
+
+
 $primary-color:#0B78DD;
 $second-color:#FFFFFF;
 $third-color:black;
 * {
 	margin:0;
 	padding:0;
+	font-family: Cuprum, arial;
 }
 a {
 	text-decoration: none;
