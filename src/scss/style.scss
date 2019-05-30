@@ -11,7 +11,7 @@
 	font-style:normal;
 }
 @font-face {
-	font-family: "Jura";
+	font-family: "Jura-bold";
 	src:url("fonts/jura-bold_[allfont.ru].ttf");
 	font-weight:900;
 	font-style:normal;
@@ -102,23 +102,34 @@ html {
 				width:100%;
 				height:calc(100vh - 100px);
 				display:flex;
-				.slogan {
+				.slogan_block {
 					display:flex;
 					max-width: 60%;
 					flex-grow: 1;
 					justify-content: flex-start;
 					align-items: center;
-					color:$second-color;
-					font-family: Jura,arial;
-					letter-spacing: -2px;
-					font-size:68px;
-					margin-left:50px;
+					.slogan {
+						color:$second-color;
+						font-family: Jura-bold,arial;
+						letter-spacing: -2px;
+						font-size:72px;
+						margin-left:50px;
+					}
 				}
-				.form {
+				.form_block {
 					display:flex;
 					max-width:40%;
+					height:20px;
 					flex-grow:1;
-
+					justify-content: center;
+					.form_backcall {
+						display:flex;
+						flex-direction: column;
+						justify-content:space-around;
+						width:70%;
+						height:400px;
+						border:solid 1px black;
+					}				
 				}
 			}
 		}
