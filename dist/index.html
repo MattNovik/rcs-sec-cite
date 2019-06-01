@@ -31,13 +31,15 @@
 					<div class="form_block">
 						<form action="" method="post" class="form_backcall">
 							<h3 class="backcall">Обратная связь</h3>
-							<input type="text" class="name">
-							<input type="text" class="mail">
-							<input type="text" class="telephone">
-							<input type="text" class="company">
-							<input type="checkbox" class="agree">
-							<p class="personal_info">Согласие на обработку персональных данных</p>
-							<button class="send">Отправить</button>
+							<input type="text" class="name" required placeholder="Имя">
+							<input type="email" class="mail" required placeholder="Email">
+							<input type="tel" class="telephone" required placeholder="(___) ___-__-__">
+							<input type="text" class="company" required placeholder="Компания">
+							<p class="agreement">
+								<input type="checkbox" id="agree" value="agree" required>
+								<label for="agree">Согласие на обработку персональных данных</label>
+							</p>
+							<input type="submit" class="submit_backcall" value="Отправить">
 						</form>
 					</div>
 				</div>
@@ -60,5 +62,6 @@
 		<footer>
 			
 		</footer>
+		<script src="js/script.min.js"></script>
 	</body>
 </html>
