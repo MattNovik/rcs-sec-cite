@@ -7,6 +7,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/style.min.css">
 		<link rel="shortcut_icon" href="images/logo/favicon.png" type="image/png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -31,32 +32,89 @@
 					<div class="form_block">
 						<form action="" method="post" class="form_backcall">
 							<h3 class="backcall">Обратная связь</h3>
-							<input type="text" class="name" required placeholder="Имя">
-							<input type="email" class="mail" required placeholder="Email">
-							<input type="tel" class="telephone" required placeholder="(___) ___-__-__">
+							<input type="text" class="name" name="name" required placeholder="Имя">
+							<input type="email" class="mail" name="mail" required placeholder="Email">
+							<input type="tel" class="telephone" name="tel" required placeholder="(___) ___-__-__">
 							<input type="text" class="company" required placeholder="Компания">
 							<p class="agreement">
 								<input type="checkbox" id="agree" value="agree" required>
 								<label for="agree">Согласие на обработку персональных данных</label>
 							</p>
-							<input type="submit" class="submit_backcall" value="Отправить">
+							<input id ="submit" type="submit" class="submit_backcall" value="Отправить">
 						</form>
 					</div>
+					<script>
+						 $("#submit").click(function() { 
+						 var name = $('input[name=name]').val(); 
+						 var tel = $('input[name=tel]').val();
+						 var otpravka = true;
+						 if(name==""){ 
+						 otpravka = false;
+						 }
+						 if(tel==""){ 
+						 otpravka = false;
+						 }
+						 if(otpravka) 
+						 {
+
+						 dannie = {'polz_name':name, 'polz_tel':tel};
+						 $.post('send.php', dannie,'json')	 
+						 }
+						 });
+					</script>
 				</div>
 			</div>
 		</header>
 		<main>
 			<div class="our-services">
-				
+				<div class="name_services"><span>Наши </span> услуги</div>
+				<div class="blocks_of_services">
+					<div class="serv first">
+						<div class="pic">
+							<img src="images/services_icons/elevator.svg" alt="">
+						</div>
+						<div class="name_serv">ТО Лифтов</div>
+					</div>
+					<div class="serv second">
+						<div class="pic">
+							<img src="images/services_icons/customer-support.svg" alt="">
+						</div>
+						<div class="name_serv">Осведетельствование</div>
+					</div>
+					<div class="serv third">
+						<div class="pic">
+							<img src="images/services_icons/search.svg" alt="">
+						</div>
+						<div class="name_serv">Обследование</div>
+					</div>
+					<div class="serv fourth">
+						<div class="pic">
+							<img src="images/services_icons/life-insurance.svg" alt="">
+						</div>
+						<div class="name_serv">Сертификация</div>
+					</div>
+					<div class="serv fifth">
+						<div class="pic">
+							<img src="images/services_icons/warranty.svg" alt="">
+						</div>
+						<div class="name_serv">Сертификация</div>
+					</div>
+				</div>
 			</div>
 			<div class="make-order">
-				
+				<div class="make_order_now">ОСТАВЬТЕ ЗАЯВКУ ПРЯМО СЕЙЧАС</div>
+				<div class="order">
+					<button class="to_order">ЗАПОЛНИТЬ</button>
+				</div>
 			</div>
-			<div class="certifacates">
-				
+			<div class="certificates">
+				<div class="names_certificates">Сертификаты и Лицензии</div>
+				<div class="images_certifacates"></div>
 			</div>
 			<div class="how-we-work">
-				
+				<div class="title">Как мы работаем</div>
+				<div class="explanation"></div>
+				<div class="steps_of_work"></div>
 			</div>
 		</main>
 		<footer>

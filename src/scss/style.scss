@@ -5,14 +5,14 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: "Cuprum-bold";
-	src:url("fonts/cuprum-bold_[allfont.ru].ttf");
+	font-family: "Cuprum_bold";
+	src:url("fonts/cuprumbold.ttf");
 	font-weight:900;
 	font-style:normal;
 }
 @font-face {
-	font-family: "Jura-bold";
-	src:url("fonts/jura-bold_[allfont.ru].ttf");
+	font-family: "Jura";
+	src:url("fonts/juramedium.ttf");
 	font-weight:900;
 	font-style:normal;
 }
@@ -40,11 +40,12 @@ html {
 	body {
 		width:100%;
 		height:auto;
+    	font-family: Cuprum,arial;
 		header {
 			width:100%;
 			height:calc(100vh + 100px);
 			position:relative;
-			margin:-3px;
+			margin:-5px -3px;
 			.head_inner-wrapper,
 			.blur {
 			    position: absolute;
@@ -57,14 +58,14 @@ html {
 			}
 			.head_inner-wrapper {
 			    z-index: 100;
-			    background-color: rgba(19,30,134,0.3);
+			    background-color: rgba(59,83,142,0.3);
 			}
 			.blur {
 			    z-index: 1;
 			    background-image: url("../images/top_bg_smaller.jpg");
-			    background-size: contain;
+			    background-size: cover;
 			    background-repeat: no-repeat;
-			    filter: blur(2px);
+			    filter: blur(3px);
 			    
 			}
 			.logo_top-menu {
@@ -86,16 +87,16 @@ html {
 					max-width:50%;
 					display:flex;
 					justify-content: space-around;
-					font-size: 1.2em;
-					font-family: Cuprum-bold, arial;
+					font-size: 1.4em;
+					font-family: Cuprum_bold, arial;
 					a {
 						color:$second-color;
 						display:flex;
 						justify-content: center;
 					}
 					a:hover {
-						color:$primary-color;
-						transform: scale(1.2);
+						color:#0B78DD;
+						transform: scale(1.3);
 					}
 				}
 			}
@@ -111,9 +112,9 @@ html {
 					align-items: center;
 					.slogan {
 						color:$second-color;
-						font-family: Jura-bold,arial;
-						letter-spacing: -2px;
-						font-size:72px;
+						font-family: Jura,arial;
+						letter-spacing: -1.8px;
+						font-size:80px;
 						margin-left:50px;
 					}
 				}
@@ -122,7 +123,11 @@ html {
 					max-width:40%;
 					flex-grow:1;
 					justify-content: center;
+					position:relative;
 					.form_backcall {
+						position:absolute;
+						top:50px;
+						z-index:110;
 						display:flex;
 						flex-direction: column;
 						justify-content:space-around;
@@ -133,6 +138,7 @@ html {
 						border:none;
 						border-radius:4px;
 						background-color: rgba(255,255,255,0.7);
+						box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 						.backcall {
 							font-family: Cuprum,arial;
 							font-size: 22px;
@@ -147,13 +153,33 @@ html {
 							border-radius:4px;
 							outline:none;
 							background-color:#EEEEEE;
+							padding-left:10px;
+							font-size: 14px;
+						}
+
+						.name:hover,
+						.mail:hover,
+						.telephone:hover,
+						.company:hover {
+							border:solid 1px gray;
+						}
+						.name:focus,
+						.mail:focus,
+						.telephone:focus,
+						.company:focus {
+							border:solid 1px $primary-color;
 						}
 						.agreement {
 							display:flex;
 							align-items: center;
+							justify-content: space-around;
+							label {
+								margin-left:10px;
+								font-size:15px;
+							}
 						}
 						.submit_backcall {
-							width:85%;
+							width:calc(85% + 10px);
 							height:40px;
 							border:solid 1px $primary-color;
 							border-radius:4px;
@@ -163,15 +189,167 @@ html {
 							font-family: Cuprum,arial;
 							font-size: 22px;
 						}
-
+						input[type=submit]:hover {
+							cursor: pointer;
+						}
 					}			
 					.form_backcall:hover {
 						background-color: rgba(255,255,255,1);
+					}
+					.form_backcall:hover .name,
+					.form_backcall:hover .telephone,
+					.form_backcall:hover .mail,
+					.form_backcall:hover .company {
+						background-color:#D7D3D3;
 					}
 				}
 			}
 		}
 		main {
+			width:100%;
+			height:auto;
+			.our-services {
+				width:calc(100% - 80px);
+				height:440px;
+				margin:0 40px;
+				display:flex;
+				flex-direction: column;
+				font-family: Cuprum_bold,arial;
+				.name_services {
+					width:100%;
+					height:170px;
+					margin-left:150px;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					font-size: 48px;
+					span {
+						display:block;
+						margin-right:15px;
+						color:$primary-color;
+					}
+				}
+				.blocks_of_services {
+					width:100%;
+					height:270px;
+					display:flex;
+					justify-content: space-around;
+					align-items:center;
+					.serv {
+						width:120px;
+						height:270px;
+						.pic {
+							width:120px;
+							height:120px;
+							border:solid 1px transparent;
+							img {
+								width:120px;
+								height:120px;
+								object-fit: cover;
+							}
+						}
+						.name_serv {
+							width:120px;
+							height:150px;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							font-size: 22px;
+						}
+					}
+				}
+			}
+			.make-order {
+				width:100%;
+				height:100px;
+				background-color:#565656;
+				display:flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				.make_order_now {
+					color:$second-color;
+					font-family: Cuprum_bold,arial;
+					font-size:24px;
+					letter-spacing: -0.4px;
+				}
+				.to_order {
+					width:220px;
+					height:35px;
+					outline:none;
+					border:none;
+					border-radius:4px;
+					color:#C62314;
+					font-family: Cuprum_bold,arial;
+					font-size:22px;
+					letter-spacing: -0.4px;
+					cursor: pointer;
+				}
+			}
+			.certificates {
+				width:100%;
+				height:500px;
+				display:flex;
+				flex-direction: column;
+				.names_certificates {
+					width:100%;
+					height:100px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-family: Cuprum_bold, arial;
+					font-size:48px;
+					letter-spacing: -1px;
+					color:$primary-color;
+				}
+			}
+			.how-we-work {
+				width:100%;
+				height:250px;
+				display:flex;
+				justify-content: center;
+				border:solid 1px black;
+				.title {
+					width:40%;
+					height:50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					/* Прячем часть линий, выходящие за пределы блока */
+				    overflow: hidden;
+				    /* Выравниваем заголовок по центру, можно указать left, right для выравнивания влево или вправо */
+				    text-align: center;
+				    /* Размер заголовка */
+				    font-size: 18px;
+				}
+				.title:before,
+				.title:after {
+				    /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
+				    content: "";
+				    /* Свойства линий, выравнивание по центру по вертикали */
+				    display: inline-block;
+				    vertical-align: middle;
+				    /* Ширина - 100% и указываем толщину линии */
+				    width: 100%;
+				    height: 2px;
+				    /* Цвет линии */
+				    background-color: $primary-color;
+				    /* Возможность для пседоэлементов изменить позицию линии */
+				    position: relative;
+				}
+				.title:before {
+				    /* Ставим левую линию слева от текста, смещая ее на 100% влево */
+				    margin-left: -100%;
+				    /* Отступ линии от заголовка */
+				    left: -10%;
+				}
+				.title:after {
+				    /* Ставим правую линию справа от текста, смещая ее на 100% вправо */
+				    margin-right: -100%;
+				    /* Отступ линии от заголовка */
+				    right: -10%;
+				}
+			}
 
 		}
 		footer {
