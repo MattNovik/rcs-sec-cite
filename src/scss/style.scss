@@ -93,6 +93,7 @@ html {
 						color:$second-color;
 						display:flex;
 						justify-content: center;
+						transition-duration: .5s;
 					}
 					a:hover {
 						color:#0B78DD;
@@ -137,7 +138,7 @@ html {
 						height:440px;
 						border:none;
 						border-radius:4px;
-						background-color: rgba(255,255,255,0.7);
+						background-color: rgba(255,255,255,1);
 						box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 						.backcall {
 							font-family: Cuprum,arial;
@@ -155,6 +156,7 @@ html {
 							background-color:#EEEEEE;
 							padding-left:10px;
 							font-size: 14px;
+							background-color:#D7D3D3;
 						}
 
 						.name:hover,
@@ -231,13 +233,17 @@ html {
 				}
 				.blocks_of_services {
 					width:100%;
-					height:270px;
+					height:240px;
 					display:flex;
 					justify-content: space-around;
 					align-items:center;
 					.serv {
-						width:120px;
+						flex-grow: 1;
 						height:270px;
+						display:flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
 						.pic {
 							width:120px;
 							height:120px;
@@ -246,16 +252,25 @@ html {
 								width:120px;
 								height:120px;
 								object-fit: cover;
+								transition-duration: .7s;
 							}
 						}
 						.name_serv {
 							width:120px;
-							height:150px;
+							height:120px;
 							display: flex;
 							justify-content: center;
 							align-items: center;
 							font-size: 22px;
+							transition-duration: .7s;
 						}
+					}
+					.serv:hover .pic img {
+						transform: scale(1.3);
+					}
+					.serv:hover .name_serv {
+						color:$primary-color;
+						transform: scale(1.3);
 					}
 				}
 			}
@@ -288,7 +303,7 @@ html {
 			}
 			.certificates {
 				width:100%;
-				height:500px;
+				height:550px;
 				display:flex;
 				flex-direction: column;
 				.names_certificates {
@@ -302,58 +317,190 @@ html {
 					letter-spacing: -1px;
 					color:$primary-color;
 				}
+				.images_certifacates {
+					width:100%;
+					height:400px;
+					display:flex;
+					justify-content: space-around;
+				}
 			}
 			.how-we-work {
-				width:100%;
+				width:calc(100% + 10px);
 				height:250px;
 				display:flex;
-				justify-content: center;
-				border:solid 1px black;
-				.title {
-					width:40%;
-					height:50px;
+				position:relative;
+				margin:0 -5px;
+				font-family: Cuprum, arial;
+				.how_we_work_inner-wrapper,
+				.opacity{
+				    position: absolute;
+				    width:calc(100% + 10px);
+					height:250px;
+				    left: 0;
+				    top: 0;
+				    bottom:0;
+				    right:0;
+				}
+				.opacity {
+				    z-index: 1;
+				    background-image: url("../images/how_we_work/contract2.jpg");
+				    background-size: cover;
+				    background-repeat: no-repeat;	
+				    filter:grayscale(100%) blur(1px);
+				    opacity: 0.6;	    
+				}
+				.how_we_work_inner-wrapper {
 					display: flex;
-					justify-content: center;
+					flex-direction:column;
 					align-items: center;
-					/* Прячем часть линий, выходящие за пределы блока */
-				    overflow: hidden;
-				    /* Выравниваем заголовок по центру, можно указать left, right для выравнивания влево или вправо */
-				    text-align: center;
-				    /* Размер заголовка */
-				    font-size: 18px;
-				}
-				.title:before,
-				.title:after {
-				    /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
-				    content: "";
-				    /* Свойства линий, выравнивание по центру по вертикали */
-				    display: inline-block;
-				    vertical-align: middle;
-				    /* Ширина - 100% и указываем толщину линии */
-				    width: 100%;
-				    height: 2px;
-				    /* Цвет линии */
-				    background-color: $primary-color;
-				    /* Возможность для пседоэлементов изменить позицию линии */
-				    position: relative;
-				}
-				.title:before {
-				    /* Ставим левую линию слева от текста, смещая ее на 100% влево */
-				    margin-left: -100%;
-				    /* Отступ линии от заголовка */
-				    left: -10%;
-				}
-				.title:after {
-				    /* Ставим правую линию справа от текста, смещая ее на 100% вправо */
-				    margin-right: -100%;
-				    /* Отступ линии от заголовка */
-				    right: -10%;
+				    z-index: 100;
+					.title {
+						width:40%;
+						height:50px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						/* Прячем часть линий, выходящие за пределы блока */
+					    overflow: hidden;
+					    /* Выравниваем заголовок по центру, можно указать left, right для выравнивания влево или вправо */
+					    text-align: center;
+					    /* Размер заголовка */
+					    font-size: 20px;
+					}
+					.title:before,
+					.title:after {
+					    /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
+					    content: "";
+					    /* Свойства линий, выравнивание по центру по вертикали */
+					    display: inline-block;
+					    vertical-align: middle;
+					    /* Ширина - 100% и указываем толщину линии */
+					    width: 100%;
+					    height: 1px;
+					    /* Цвет линии */
+					    background-color: #000000;
+					    /* Возможность для пседоэлементов изменить позицию линии */
+					    position: relative;
+					}
+					.title:before {
+					    /* Ставим левую линию слева от текста, смещая ее на 100% влево */
+					    margin-left: -100%;
+					    /* Отступ линии от заголовка */
+					    left: -10%;
+					}
+					.title:after {
+					    /* Ставим правую линию справа от текста, смещая ее на 100% вправо */
+					    margin-right: -100%;
+					    /* Отступ линии от заголовка */
+					    right: -10%;
+					}
+					.explanation {
+						width:80%;
+						height:50px;
+						display: flex;
+						text-align:center;
+						align-items: center;
+						justify-content: center;
+					}
+					.steps_of_work {
+						width:80%;
+						height:150px;
+						display:flex;
+						align-items: center;
+						justify-content: space-between;
+						.step_first,
+						.step_second,
+						.step_third,
+						.step_fourth {
+							min-width:70px;
+							height:100px;
+							display:flex;
+							flex-direction: column;
+							align-items: center;
+							margin:0 3%;
+							.step_request,
+							.step_contract,
+							.step_work,
+							.step_documents {
+								min-width:70px;
+								height:70px;
+								border-radius: 50%;
+							}
+							.step_request { 
+								margin-left:0;
+								background-image: url("../images/how_we_work/contract3.jpg");
+								background-size: cover;
+							}
+							.step_contract { 
+								background-image: url("../images/how_we_work/contract1.jpg");
+								background-size: cover;
+							}
+							.step_work{ 
+								background-image: url("../images/how_we_work/work/work1.jpg");
+								background-size: cover;
+							}
+							.step_documents {
+								margin-right: 0;
+								background-image: url("../images/how_we_work/documents/documents1.jpg");
+								background-size: cover;
+							}
+							.request,
+							.contract,
+							.work,
+							.documents {
+								width:70px;
+								height:30px;
+								display: flex;
+								text-align: center;
+								justify-content: center;
+								align-items: center;
+							}
+						}
+						.step_first:hover,
+						.step_second:hover,
+						.step_third:hover,
+						.step_fourth:hover {
+							cursor: pointer;
+							transform: scale(1.4);
+						}
+
+						hr {
+							width:100%;
+							height:1px;
+							border:none;
+							background-color: #000000;
+						}
+					}
 				}
 			}
-
 		}
 		footer {
+			width:100%;
+			height:200px;
+			background-color: #373737;
+			display: grid;
+			grid-template-rows: 150px 50px;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 
+				"contacts us"
+				"terms terms";
+			.bot_contacts {
 
+				height:150px;
+				grid-area: contacts;
+				border:solid 1px white;
+			}
+			.about_us {
+				height:150px;
+				grid-area: us;
+								border:solid 1px white;
+			}
+			.terms {
+				width:100%;
+				height:50px;
+				grid-area: terms;
+								border:solid 1px white;
+			}
 		}
 	}
 }
