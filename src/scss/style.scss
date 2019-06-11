@@ -28,6 +28,7 @@ $third-color:black;
 a {
 	text-decoration: none;
 	list-style-type: none;
+	color:#000000;
 }
 a:hover {
 	color:$primary-color;
@@ -321,7 +322,7 @@ html {
 					width:100%;
 					height:400px;
 					display:flex;
-					justify-content: space-around;
+					justify-content: center;
 				}
 			}
 			.how-we-work {
