@@ -33,7 +33,69 @@ a {
 a:hover {
 	color:$primary-color;
 }
-
+.form {
+	width:100%;
+	height:100vh;
+	z-index:999;
+	background-color:black;
+	position:fixed;
+	visibility: hidden;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        display: block;
+        padding: 12px 15px;
+        line-height: 1.5;
+        width: 100%;
+        font-size: 16px;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        background-clip: padding-box;
+        background-color: #fff;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, .05), inset 0 1px 2px 0 rgba(0, 0, 0, .05);
+        &:focus {
+            outline: none;
+        }
+    }
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .form-group:nth-child(1) {
+            input {
+                width: 95%;
+            }
+        }
+    }
+    .col-6 {
+        position: relative;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .pt-3 {
+        padding-top: 1rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+        label {
+            line-height: 1.7;
+            letter-spacing: .3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 900;
+        }
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+    }
+}
 html {
 	width:calc(100vw - 13px);
 	height:auto;
@@ -481,34 +543,61 @@ html {
 			background-color: #373737;
 			display: grid;
 			grid-template-rows: 180px 52px;
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr;
 			grid-template-areas: 
-				"contacts us"
-				"terms terms";
+				"contacts inf us"
+				"terms terms terms";
+			font-family: Cuprum, arial;
 			.bot_contacts {
-				height:180px;
+				height:150px;
 				grid-area: contacts;
 				display:flex;
 				flex-direction: column;
+				padding-top:30px;
 				.place,
 				.tel_number,
 				.email_post {
-					margin-left:30px;
+					margin-left:50px;
+					width:70%;
+					height:40px;
 					display:flex;
 					p {
 						margin-left:10px;
+						color:#CACACA;
 					}
 				}
 			}
+			.information {
+				height:150px;
+				grid-area: inf;
+				display:flex;
+				flex-direction: column;
+				padding-left:50px;
+				padding-top:30px;
+				p {
+					width:70%;
+					color:#CACACA;
+				}
+				.inf {
+					color:#F0F0F0;
+					margin-bottom:20px;
+					text-align:center;
+				}
+			}
 			.about_us {
-				height:180px;
+				height:150px;
 				grid-area: us;
 				display:flex;
 				flex-direction: column;
-				justify-content: space-around;
 				padding-left:50px;
+				padding-top:30px;
 				p {
-					width:40%;
+					width:70%;
+					color:#CACACA;
+				}
+				.about {
+					color:#F0F0F0;
+					margin-bottom:20px;
 				}
 			}
 			.terms {
@@ -518,7 +607,8 @@ html {
 				grid-area: terms;
 				display:flex;
 				align-items: center;
-				border-top:solid 1px #FFFFFF;
+				border-top:solid 1px #CACACA;
+				color:#CACACA;
 			}
 		}
 	}
