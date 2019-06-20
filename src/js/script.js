@@ -1,4 +1,78 @@
 var slider = Peppermint(document.getElementById('peppermint'));
+
+var inputName = document.querySelector(".name");
+var inputMail = document.querySelector(".mail");
+var inputTelephone = document.querySelector(".telephone");
+var inputCompany = document.querySelector(".company");
+var formBackcall = document.querySelector(".form_backcall");
+
+	
+
+	inputName.onfocus  = function () {
+		if (formBackcall.classList.contains("op")) {
+			return;
+		} else {
+			formBackcall.classList.add("op");
+		}
+	};
+	inputName.onblur = function() {
+		if (formBackcall.classList.contains("op")) {
+			formBackcall.classList.remove("op");
+		};
+	};
+	inputMail.onfocus  = function () {
+		if (formBackcall.classList.contains("op")) {
+			return;
+		} else {
+			formBackcall.classList.add("op");
+		}
+	};
+	inputMail.onblur = function() {
+		if (formBackcall.classList.contains("op")) {
+			formBackcall.classList.remove("op");
+		};
+	};
+
+	inputTelephone.onfocus  = function () {
+		if (formBackcall.classList.contains("op")) {
+			return;
+		} else {
+			formBackcall.classList.add("op");
+		}
+	};
+	inputTelephone.onblur = function() {
+		if (formBackcall.classList.contains("op")) {
+			formBackcall.classList.remove("op");
+		};
+	};
+
+	inputCompany.onfocus  = function () {
+		if (formBackcall.classList.contains("op")) {
+			return;
+		} else {
+			formBackcall.classList.add("op");
+		}
+	};
+	inputCompany.onblur = function() {
+		if (formBackcall.classList.contains("op")) {
+			formBackcall.classList.remove("op");
+		};
+	};
+
+	formBackcall.onmouseover = function () {
+		if (formBackcall.classList.contains("ops")) {
+			return;
+		} else {
+			formBackcall.classList.add("ops");
+		}
+	};
+	formBackcall.onmouseout = function () {
+		if (formBackcall.classList.contains("ops")) {
+			formBackcall.classList.remove("ops");
+		};
+	};
+
+
 var order = document.getElementById('order');
 var form = document.querySelector(".form");
 var html = document.querySelector("html");

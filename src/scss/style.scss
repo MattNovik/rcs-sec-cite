@@ -193,13 +193,15 @@ a:hover {
 	}
 }
 html {
-	width:calc(100vw - 13px);
+	width:100vw;
+	max-width:100%;
 	height:auto;
 	overflow-x: hidden;
 	body {
 		width:100%;
 		height:auto;
     	font-family: Cuprum,arial;
+    	overflow-x: hidden;
 		header {
 			width:100%;
 			max-width:100%;
@@ -247,7 +249,7 @@ html {
 					max-width:50%;
 					display:flex;
 					justify-content: space-around;
-					font-size: 1.4em;
+					font-size: 25px;
 					font-family: Cuprum_bold, arial;
 					a {
 						color:$second-color;
@@ -275,7 +277,7 @@ html {
 						color:$second-color;
 						font-family: Jura,arial;
 						letter-spacing: -1.8px;
-						font-size:80px;
+						font-size:86px;
 						margin-left:50px;
 					}
 				}
@@ -298,7 +300,7 @@ html {
 						height:500px;
 						border:none;
 						border-radius:4px;
-						background-color: rgba(255,255,255,1);
+						background-color: rgba(255,255,255,0.75);
 						box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 						.backcall {
 							font-family: Cuprum,arial;
@@ -337,7 +339,7 @@ html {
 							justify-content: space-around;
 							label {
 								margin-left:10px;
-								font-size:15px;
+								font-size:18px;
 							}
 						}
 						.submit_backcall {
@@ -354,6 +356,15 @@ html {
 						input[type=submit]:hover {
 							cursor: pointer;
 						}
+					}
+					.op {
+						background-color: rgba(255,255,255,1);
+					}
+					.ops {
+						background-color:rgba(255,255,255,1);
+					}
+					.opa {
+						background-color: rgba(255,255,255,1);
 					}			
 					.form_backcall:hover {
 						background-color: rgba(255,255,255,1);
@@ -835,13 +846,14 @@ html {
 	}
 }
 html {
-	width:calc(100vw - 13px);
+	width:100vw;
 	height:auto;
 	overflow-x: hidden;
 	body {
 		width:100%;
 		height:auto;
     	font-family: Cuprum,arial;
+    	overflow-x: hidden;
 		header {
 			width:100%;
 			max-width:100%;
