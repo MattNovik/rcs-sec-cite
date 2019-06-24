@@ -315,10 +315,9 @@ html {
 							border:solid 1px #EEEEEE;
 							border-radius:4px;
 							outline:none;
-							background-color:#EEEEEE;
+							background-color:#FFFFFF;
 							padding-left:10px;
 							font-size: 14px;
-							background-color:#D7D3D3;
 						}
 
 						.name:hover,
@@ -332,6 +331,7 @@ html {
 						.telephone:focus,
 						.company:focus {
 							border:solid 1px $primary-color;
+							background-color:#D7D3D3;
 						}
 						.agreement {
 							display:flex;
@@ -520,7 +520,7 @@ html {
 				    background-image: url("../images/how_we_work/contract2.jpg");
 				    background-size: cover;
 				    background-repeat: no-repeat;	
-				    filter:grayscale(100%) blur(1px);
+				    filter:grayscale(100%) blur(7px);
 				    opacity: 0.6;	    
 				}
 				.how_we_work_inner-wrapper {

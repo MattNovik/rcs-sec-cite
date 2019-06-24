@@ -5,60 +5,27 @@ var inputMail = document.querySelector(".mail");
 var inputTelephone = document.querySelector(".telephone");
 var inputCompany = document.querySelector(".company");
 var formBackcall = document.querySelector(".form_backcall");
+var input = formBackcall.querySelectorAll("input");
 
-	
+/*catch hover and focus/blur on input for changing style form */
 
-	inputName.onfocus  = function () {
+for (var i = 0; i < input.length;i++) {
+	input[i].addEventListener('focus',function () {
 		if (formBackcall.classList.contains("op")) {
 			return;
 		} else {
 			formBackcall.classList.add("op");
 		}
-	};
-	inputName.onblur = function() {
-		if (formBackcall.classList.contains("op")) {
-			formBackcall.classList.remove("op");
-		};
-	};
-	inputMail.onfocus  = function () {
-		if (formBackcall.classList.contains("op")) {
-			return;
-		} else {
-			formBackcall.classList.add("op");
-		}
-	};
-	inputMail.onblur = function() {
-		if (formBackcall.classList.contains("op")) {
-			formBackcall.classList.remove("op");
-		};
-	};
+	});
+}
 
-	inputTelephone.onfocus  = function () {
-		if (formBackcall.classList.contains("op")) {
-			return;
-		} else {
-			formBackcall.classList.add("op");
-		}
-	};
-	inputTelephone.onblur = function() {
+for (var i = 0; i < input.length;i++) {
+	input[i].addEventListener('blur',function () {
 		if (formBackcall.classList.contains("op")) {
 			formBackcall.classList.remove("op");
-		};
-	};
-
-	inputCompany.onfocus  = function () {
-		if (formBackcall.classList.contains("op")) {
-			return;
-		} else {
-			formBackcall.classList.add("op");
 		}
-	};
-	inputCompany.onblur = function() {
-		if (formBackcall.classList.contains("op")) {
-			formBackcall.classList.remove("op");
-		};
-	};
-
+	});
+}
 	formBackcall.onmouseover = function () {
 		if (formBackcall.classList.contains("ops")) {
 			return;
