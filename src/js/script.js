@@ -1,5 +1,10 @@
-var slider = Peppermint(document.getElementById('peppermint'));
-
+var slider = Peppermint(document.getElementById('peppermint'),{
+	dots: true,
+	slideshow: true,
+	speed: 2500,
+	slideshowInterval: 5000,
+	stopSlideshowAfterInteraction: true
+});
 var inputName = document.querySelector(".name");
 var inputMail = document.querySelector(".mail");
 var inputTelephone = document.querySelector(".telephone");
@@ -7,7 +12,7 @@ var inputCompany = document.querySelector(".company");
 var formBackcall = document.querySelector(".form_backcall");
 var input = formBackcall.querySelectorAll("input");
 
-/*catch hover and focus/blur on input for changing style form */
+// catch hover and focus/blur on input for changing style form 
 
 for (var i = 0; i < input.length;i++) {
 	input[i].addEventListener('focus',function () {
@@ -17,29 +22,26 @@ for (var i = 0; i < input.length;i++) {
 			formBackcall.classList.add("op");
 		}
 	});
-}
-
-for (var i = 0; i < input.length;i++) {
 	input[i].addEventListener('blur',function () {
 		if (formBackcall.classList.contains("op")) {
 			formBackcall.classList.remove("op");
 		}
 	});
 }
-	formBackcall.onmouseover = function () {
+
+	formBackcall.addEventListener('mouseover', function () {
 		if (formBackcall.classList.contains("ops")) {
 			return;
 		} else {
 			formBackcall.classList.add("ops");
 		}
-	};
-	formBackcall.onmouseout = function () {
+	});
+
+	formBackcall.addEventListener('mouseout', function () {
 		if (formBackcall.classList.contains("ops")) {
 			formBackcall.classList.remove("ops");
 		};
-	};
-
-
+	});
 var order = document.getElementById('order');
 var form = document.querySelector(".form");
 var html = document.querySelector("html");
