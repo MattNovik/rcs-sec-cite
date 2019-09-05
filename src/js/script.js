@@ -1,3 +1,4 @@
+"use strict"
 var slider = Peppermint(document.getElementById('peppermint'),{
 	dots: true,
 	slideshow: true,
@@ -69,3 +70,10 @@ var cancel = document.querySelector(".cancel");
             $('#submit2').attr('disabled', 'disabled');
         }
     }
+
+var navToggle = document.getElementById('navToggle');
+var overlay = document.querySelector('.overlay')
+	navToggle.onclick = function () {
+		this.classList.toggle("active");
+		overlay.classList.toggle('open')
+	}
