@@ -142,71 +142,12 @@ gulp.task("scripts", function() {
         .pipe(gulp.dest("dist/js")); // директория продакшена, т.е. куда сложить готовый файл
 });
 
-gulp.task('imgs', function() {
-    return gulp.src("src/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/images"))
-});
-
-gulp.task('imgs-to', function() {
-    return gulp.src("src/html/to/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/html/to/images"))
-});
-
-gulp.task('imgs-sved', function() {
-    return gulp.src("src/html/sved/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/html/sved/images"))
-});
-
-gulp.task('imgs-obsled', function() {
-    return gulp.src("src/html/obsled/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/html/obsled/images"))
-});
-
-gulp.task('imgs-cert', function() {
-    return gulp.src("src/html/cert/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/html/cert/images"))
-});
-
-gulp.task('imgs-cert2', function() {
-    return gulp.src("src/html/cert2/images/**/*.+(jpg|jpeg|png|gif|svg)")
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("dist/html/cert2/images"))
-});
 
 gulp.task('watch', function() {
     gulp.watch('src/scss/**/*.scss', gulp.parallel('sass'));
     gulp.watch("src/*.html", gulp.parallel('html'));
     gulp.watch("src/js/*.js", gulp.parallel('scripts'));
-    gulp.watch("src/images/*.+(jpg|jpeg|png|gif|svg)", gulp.parallel('imgs'));
+    
 });
 
-gulp.task("default", gulp.parallel("html","html-to","html-sved","html-obsled","html-cert","html-cert2", "sass","sass_to","sass_sved", "sass_obsled", "sass_cert","sass_cert2","scripts", "imgs","imgs-to","imgs-sved","imgs-obsled","imgs-cert","imgs-cert2","browserSync", "watch"));
+gulp.task("default", gulp.parallel("html","html-to","html-sved","html-obsled","html-cert","html-cert2", "sass","sass_to","sass_sved", "sass_obsled", "sass_cert","sass_cert2","scripts","browserSync", "watch"));
