@@ -33,6 +33,17 @@ a {
 a:hover {
 	color:$primary-color;
 }
+html body header .slogan_form .form_block .form_backcall.stand {
+								position:relative;
+								margin-right:0;
+								transition: margin .6s cubic-bezier(0, 0, 1, 1);
+							}
+html body header .slogan_form .form_block .form_backcall.close {
+								position:relative;
+								margin-right:-2000px;
+								transition: margin .6s cubic-bezier(0, 0, 1, 1);
+							}
+
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -3724,6 +3735,8 @@ $third-color:black;
 		    }
 		}
 	}
+
+
 	html {
 		width:100vw;
 		max-width:100%;
@@ -3760,6 +3773,17 @@ $third-color:black;
 				    background-size: 100% 100%;
 				    background-repeat: no-repeat;    
 				}
+				.top_menu_wrapper {
+					position:absolute;
+					width:100%;
+					height:200px;
+					left:0;
+					top:0;
+					bottom:0;
+					right:0;
+					background-color: #FFFFFF;
+					opacity:.6;
+				}
 				.logo_top-menu {
 					width:100%;
 					height:200px;
@@ -3770,6 +3794,7 @@ $third-color:black;
 						max-width:50%;
 						display: flex;
 						justify-content: flex-start;
+						z-index:100;
 						.logo_pic {
 							margin-left:50px;
 						}
@@ -3794,13 +3819,15 @@ $third-color:black;
 						font-size: 25px;
 						font-family: Cuprum_bold, arial;
 						.more_services {
-								display:none;
+								opacity:0;
+								display:flex;
+								transition: opacity 0.6s cubic-bezier(0, 0, 1, 1);
 								position:absolute;
-								top:-20px;
-								left:20px;
-								border:solid 1px red;
+								bottom:-130px;
+								left:-50px;
 								flex-direction: column;
 								width:150px;
+								background-color: #FFFFFF;
 						}
 						.main_page,
 						.services,
@@ -3813,14 +3840,20 @@ $third-color:black;
 							transition-duration: .5s;
 							cursor: pointer;
 							position:relative;
+							width:100%;
+							height:100%;
+							border-radius: 5px;
 							.link {
-								color:#FFFFFF;
-
+								color:#000000;
+							}
+							.link:hover {
+								color:$primary-color;
 							}
 
 						}
 						.services:hover .more_services {
-							display:flex;
+							opacity:1;
+							transition: opacity 0.6s cubic-bezier(0, 0, 1, 1);
 						}
 						.main_page:hover,
 						.services:hover,
@@ -3872,6 +3905,7 @@ $third-color:black;
 							background-color: rgba(255,255,255,0.75);
 							box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 							transition: .7s;
+
 							.backcall {
 								font-family: Cuprum,arial;
 								font-size: 22px;

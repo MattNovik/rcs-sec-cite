@@ -77,3 +77,21 @@ var overlay = document.querySelector('.overlay')
 		this.classList.toggle("active");
 		overlay.classList.toggle('open')
 	}
+
+
+var services = document.querySelector(".services");
+var formBackcall = document.querySelector(".form_backcall");
+
+services.onmouseover= function () {
+    if (!formBackcall.classList.contains('close')) {
+        formBackcall.classList.remove('stand');
+        formBackcall.classList.add('close');
+
+    }
+};
+services.onmouseout = function () {
+    if (formBackcall.classList.contains('close')) {
+        formBackcall.classList.remove('close');
+        formBackcall.classList.add('stand');
+    }
+};
