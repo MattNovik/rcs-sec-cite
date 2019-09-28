@@ -24,7 +24,9 @@ $third-color:black;
 	margin:0;
 	padding:0;
 }
-
+li {
+	list-style-type: none;
+}
 a {
 	text-decoration: none;
 	list-style-type: none;
@@ -43,7 +45,6 @@ html body header .slogan_form .form_block .form_backcall.close {
 								margin-right:-2000px;
 								transition: margin .6s cubic-bezier(0, 0, 1, 1);
 							}
-
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -3650,13 +3651,19 @@ $third-color:black;
 				right:0;
 				cursor: pointer;
 			}
+			label {
+				width:50%;
+				max-width:50%;
+			}
 		    input[type="text"],
 		    input[type="email"],
 		    input[type="tel"],
 		    textarea,
-		    select {
+		    select,
+		    #choose-service {
 		        height:30px;
 		        width: 50%;
+		        max-width: 50%;
 		        font-size: 16px;  
 		        line-height: 1.7;
 		        padding:0 10px;
@@ -3673,6 +3680,16 @@ $third-color:black;
 		        &:hover {
 		        	border:solid 1px $primary-color;
 		        }
+		    }
+		    select {
+		    	appearance: none;
+		    	-webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;
+				background-image: url("../images/Icons/down-arrow.svg");	    
+				background-repeat:no-repeat;
+				background-size:16px 17px;
+				background-position:top 5px right 5px;
 		    }
 		    .form-row {
 		        display: flex;
@@ -3750,14 +3767,14 @@ $third-color:black;
 			header {
 				width:100%;
 				max-width:100%;
-				height:700px;
+				height:900px;
 				position:relative;
 				margin:-5px -3px;
 				.head_inner-wrapper,
 				.blur {
 				    position: absolute;
 				    width:calc(100% + 5px);
-					height:700px;
+					height:1000px;
 				    left: 0;
 				    top: 0;
 				    bottom:0;
@@ -3765,13 +3782,16 @@ $third-color:black;
 				}
 				.head_inner-wrapper {
 				    z-index: 100;
+					background-color:  rgba(59,83,142,0.3);
 				
 				}
 				.blur {
 				    z-index: 1;
 				    background-image: url("../images/top_bg_smaller.jpg");
 				    background-size: 100% 100%;
-				    background-repeat: no-repeat;    
+				    background-repeat: no-repeat; 
+				    filter: blur(5px);
+					 
 				}
 				.top_menu_wrapper {
 					position:absolute;
@@ -3781,14 +3801,14 @@ $third-color:black;
 					top:0;
 					bottom:0;
 					right:0;
-					background-color: #FFFFFF;
-					opacity:.6;
+					background-color: rgba(255,255,255,0.5);
 				}
 				.logo_top-menu {
 					width:100%;
 					height:200px;
 					display:flex;
 					align-items: center;
+					position:relative;
 					.logo {
 						flex-grow: 1;
 						max-width:50%;
@@ -3796,7 +3816,7 @@ $third-color:black;
 						justify-content: flex-start;
 						z-index:100;
 						.logo_pic {
-							margin-left:50px;
+							margin-left:0px;
 						}
 						.logo_pic_mob {
 							display:none;
@@ -3814,60 +3834,79 @@ $third-color:black;
 					.top-menu {
 						flex-grow: 1;
 						max-width:50%;
-						display:flex;
-						justify-content: space-around;
+						z-index: 200;
 						font-size: 25px;
 						font-family: Cuprum_bold, arial;
-						.more_services {
-								opacity:0;
+						.under_menu {
+							display:flex;
+							justify-content: space-around;
+							.more_services {
+								opacity: 0;
+								visibility: hidden;
 								display:flex;
 								transition: opacity 0.6s cubic-bezier(0, 0, 1, 1);
 								position:absolute;
-								bottom:-130px;
-								left:-50px;
+								top:33px;
+								height:200px;
 								flex-direction: column;
-								width:150px;
+								width:inherit;
 								background-color: #FFFFFF;
-						}
-						.main_page,
-						.services,
-						.documents,
-						.vacancy,
-						.about {
-							color:$second-color;
-							display:block;
-							text-align: center;
-							transition-duration: .5s;
-							cursor: pointer;
-							position:relative;
-							width:100%;
-							height:100%;
-							border-radius: 5px;
-							.link {
-								color:#000000;
+								border-radius: 10px;
 							}
-							.link:hover {
-								color:$primary-color;
+							.more_services::before {
+								content: "";
+								position:absolute;
+								left:calc(50% - 10px);
+								top:-19px;
+								border: 11px solid transparent; /* Прозрачные границы */
+	    						border-bottom: 11px solid #FFFFFF; /* Добавляем треугольник */
+							}
+							.main_page,
+							.services,
+							.documents,
+							.vacancy,
+							.about {
+								color:$second-color;
+								display:block;
+								text-align: center;
+								transition-duration: .5s;
+								position:relative;
+								width:100%;
+								height:35px;
+								border-radius: 5px;
+								.link,
+								.link2 {
+									color:#000000;
+									cursor: pointer;
+								}
+								.link:hover,
+								.link2:hover {
+									color:$primary-color;
+								}
+
+							}
+							.servise:hover {
+								position:absolute;
+							}
+							.services:hover .more_services {
+								opacity: 1;
+								visibility: visible;
+							}
+							.main_page:hover,
+							.services:hover,
+							.documents:hover,
+							.vacancy:hover,
+							.about:hover {
+								color:#0B78DD;
+								transform: scale(1.3);
 							}
 
-						}
-						.services:hover .more_services {
-							opacity:1;
-							transition: opacity 0.6s cubic-bezier(0, 0, 1, 1);
-						}
-						.main_page:hover,
-						.services:hover,
-						.documents:hover,
-						.vacancy:hover,
-						.about:hover {
-							color:#0B78DD;
-							transform: scale(1.3);
 						}
 					}
 				}
 				.slogan_form {
 					width:100%;
-					height:500px;
+					height:700px;
 					display:flex;
 					.slogan_block {
 						display:flex;
@@ -3902,7 +3941,7 @@ $third-color:black;
 							height:500px;
 							border:none;
 							border-radius:4px;
-							background-color: rgba(255,255,255,0.75);
+							background-color: rgba(255,255,255,0.5);
 							box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 							transition: .7s;
 

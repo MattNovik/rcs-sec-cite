@@ -86,7 +86,6 @@ services.onmouseover= function () {
     if (!formBackcall.classList.contains('close')) {
         formBackcall.classList.remove('stand');
         formBackcall.classList.add('close');
-
     }
 };
 services.onmouseout = function () {

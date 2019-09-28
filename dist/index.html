@@ -24,23 +24,28 @@
 								</a>
 							</div>
 							<nav class="top-menu">
-								<div class="main_page"><a href="#" class="link" >Главная</a></div>
-								<div class="services">  <a href="#" class="link" >Услуги </a>
-									<div class="more_services">
-										<a href="#"> Лифты
-										</a>
-										<a href="#" > Эскалаторы
-										</a>
-										<a href="#"> Краны
-										</a>
-										<a href="#" > Попки
-										</a>
-									</div>
-								</div>
-								<div  class="documents"><a href="#" class="link" >Документы</a></div>
-								<div  class="vacancy"><a href="#" class="link" >Вакансии</a></div>
-								<div  class="about"><a href="#" class="link" >О нас</a></div>
-							</nav>
+								<ul class="under_menu">
+									<li class="main_page"><a href="#" class="link" >Главная</a></li>
+									<li class="services" id="services">  <a href="#" class="link2" >Услуги </a>
+										<ul class="more_services">
+											<li><a href="#"> Лифты
+											</a>
+											<li><a href="#" > Эскалаторы
+											</a></li>
+											<li><a href="#"> Электроизмерения
+											</a></li>
+											<li><a href="#" > Промышленная безопасность
+											</a></li>
+											<li><a href="#" > Неразрушающий контроль и безопасность
+											</a></li>
+											<li><a href="#" > Заявки на проведение работ
+											</a></li>
+										</ul>
+									</li>
+									<li  class="documents"><a href="#" class="link" >Документы</a></li>
+									<li  class="vacancy"><a href="#" class="link" >Вакансии</a></li>
+									<li  class="about"><a href="#" class="link" >О нас</a></li>
+								</ul>
 							<div class="overlay">
 								<nav class="top-menu-mob">
 									<ul role="menu">
@@ -287,21 +292,27 @@
 					<div class="cancel"><img src="images/close.svg" alt="" width="20px" height="20px" class="close"></div>
 				    <div class="form-row">
 				        <div class="form-group col-6">
-				            <label for="name">Представьтесь, пожалуйста: <span style="color: red">*</span></label>
-				            <input type="text" name="name2" id="name" onkeyup="checkParams()" placeholder="Как к вам обращаться?" required />
+				            <label for="name">Наименование организации: <span style="color: red">*</span></label>
+				            <input type="text" name="name2" id="name" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
 				        </div>
 				        <div class="form-group col-6">
-				            <label for="mail">Укажите ваш email: <span style="color: red">*</span></label>
-				            <input type="email" name="email" id="email" onkeyup="checkParams()" placeholder="Email" required />
+				            <label for="mail">Контактное лицо: <span style="color: red">*</span></label>
+				            <input type="email" name="email" id="email" onkeyup="checkParams()" placeholder="Как к вам обращаться?" required />
 				        </div>
 				    </div>
 				    <div class="form-group">
-				        <label for="phone">Укажите ваш телефон: <span style="color: red">*</span></label>
-				        <input type="tel" name="phone" id="phone" onkeyup="checkParams()" placeholder="Номер телефона +7" required />
+				        <label for="phone">Телефон: <span style="color: red">*</span></label>
+				        <input type="tel" name="phone" id="phone" onkeyup="checkParams()" placeholder="+7 (931) 11 11 111" required />
 				    </div>
 				    <div class="form-group">
-				        <label for="company">Напишите, из какой вы компании: </label>
-				        <input type="text" name="company" placeholder="Введите название" />
+						<label for="choose-service">Выберите услугу:</label>
+						<select id="choose-service" name="choose-service" />
+						    <option value="Лифты">Лифты</option>
+						    <option value="Эскалаторы, инвалидные подъемники, траволаторы">Эскалаторы, инвалидные подъемники, траволаторы</option>
+						    <option value="Электроизмерения объектов зданий, сооружений">Электроизмерения объектов зданий, сооружений</option>
+						    <option value="Экспертиза промышленной безопасности">Экспертиза промышленной безопасности</option>
+						    <option value="Неазрушающий контроль и диагностика">Неазрушающий контроль и диагностика</option>
+						</select>
 				    </div>
 				    <div class="form-group">
 				        <label for="website">Укажите ваш сайт: </label>
@@ -325,6 +336,12 @@
 				            <option value="8">Услуга_</option>
 				        </select>
 				    </div>
+
+				    <div class="form-group">
+				    	<label  for = "lifr">
+
+				    </div>
+
 				    <div class="area_for_text">
 				        <label for="message">Доп. информация:</label>
 				        <textarea name="message"></textarea>
