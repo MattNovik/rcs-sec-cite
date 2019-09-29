@@ -94,3 +94,8 @@ services.onmouseout = function () {
         formBackcall.classList.add('stand');
     }
 };
+
+var formOrg = document.querySelector(".form-row_wrapper_org");
+var formOrgInput = document.getElementById("org");
+var orgName = document.getElementById("orgName");
+var labelForOrg = document.getElementById("label-for-org")

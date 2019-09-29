@@ -290,7 +290,39 @@
 			<form class="form" method="post" action="">
 				<div class="form_inner_wrapper">
 					<div class="cancel"><img src="images/close.svg" alt="" width="20px" height="20px" class="close"></div>
-				    <div class="form-row">
+					<div class="form_head"><span class="form_main_name">Заявка на проведение работ</span>
+					</div>
+					<div class="form_main">
+						<div class="for-row-org">
+							<div class="form-row_wrapper_org">
+								<label for="name2" id="label-for-org">
+						            <span id="orgName">Наименование организации:*</span>
+						            <input type="text" name="name2" id="org" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+					        	</label>
+					        </div>	
+						</div>
+						<div class="for-row-name">
+							<div class="form-row_wrapper_name">
+					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
+					            <input type="text" name="name"  onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />	
+					        </div>
+						</div>
+						<div class="for-row-tel">
+							<div class="form-row_wrapper_tel">
+					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
+					            <input type="text" name="name" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+					        </div>	
+						</div>
+						<div class="for-row-mail">
+							<div class="form-row_wrapper_mail">
+					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
+					            <input type="text" name="name"  onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+					        </div>	
+						</div>
+					</div>
+					<div class="form_footer">
+					</div>
+<!-- 				    <div class="form-row">
 				        <div class="form-group col-6">
 				            <label for="name">Наименование организации: <span style="color: red">*</span></label>
 				            <input type="text" name="name2" id="name" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
@@ -336,12 +368,6 @@
 				            <option value="8">Услуга_</option>
 				        </select>
 				    </div>
-
-				    <div class="form-group">
-				    	<label  for = "lifr">
-
-				    </div>
-
 				    <div class="area_for_text">
 				        <label for="message">Доп. информация:</label>
 				        <textarea name="message"></textarea>
@@ -352,7 +378,7 @@
 				    </div>
 				    <div class="requared_rows">
 				        <small>Поля отмеченные звездочкой <span style="color: red">*</span> являются обязательными для заполнения.</small>
-				    </div>
+				    </div> -->
 			    </div>
 			</form>
 				<script>
