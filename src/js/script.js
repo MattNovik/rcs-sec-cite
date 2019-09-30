@@ -99,3 +99,45 @@ var formOrg = document.querySelector(".form-row_wrapper_org");
 var formOrgInput = document.getElementById("org");
 var orgName = document.getElementById("orgName");
 var labelForOrg = document.getElementById("label-for-org")
+var closeSvg = document.querySelector(".close-svg");
+
+formOrgInput.onfocus = function () {
+	formOrgInput.style.opacity="1";
+	formOrgInput.style.height="50%";
+	orgName.style.height ="50%";
+	orgName.style.fontSize ="18px";
+	formOrg.style.backgroundColor = "#FFFFFF";
+	formOrgInput.style.position="relative";
+	formOrg.style.border = "solid 1px black";
+	closeSvg.style.backgroundImage = "url(\"../images/close2.svg\")"; 
+	closeSvg.style.backgroundRepeat = "no-repeat";
+	closeSvg.style.backgroundSize = "contain";
+	closeSvg.style.display = "flex";
+};
+
+formOrgInput.onblur = function () {
+	if (formOrgInput.value.length === 0) {
+	formOrgInput.style.position="absolute";
+	formOrgInput.style.opacity="0";
+	formOrgInput.style.height="100%";
+	orgName.style.height ="100%";
+	orgName.style.zIndex ="0";
+	orgName.style.fontSize ="25px";
+	formOrg.style.backgroundColor = "rgb(238,242,247)";
+	formOrg.style.border = "solid 1px transparent";
+	closeSvg.style.background = "none";
+	closeSvg.style.display = "none";
+	}
+};
+closeSvg.onclick = function () {
+	formOrgInput.style.position="absolute";
+	formOrgInput.style.opacity="0";
+	formOrgInput.style.height="100%";
+	orgName.style.height ="100%";
+	orgName.style.zIndex ="0";
+	orgName.style.fontSize ="25px";
+	formOrg.style.backgroundColor = "rgb(238,242,247)";
+	formOrg.style.border = "solid 1px transparent";
+	closeSvg.style.background = "none";
+	closeSvg.style.display = "none";
+};
