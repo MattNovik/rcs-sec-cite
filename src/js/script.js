@@ -96,48 +96,113 @@ services.onmouseout = function () {
 };
 
 var formOrg = document.querySelector(".form-row_wrapper_org");
-var formOrgInput = document.getElementById("org");
-var orgName = document.getElementById("orgName");
-var labelForOrg = document.getElementById("label-for-org")
+var formOrgInput = document.querySelector(".org");
+var orgName = document.querySelector(".orgName");
 var closeSvg = document.querySelector(".close-svg");
 
-formOrgInput.onfocus = function () {
-	formOrgInput.style.opacity="1";
-	formOrgInput.style.height="50%";
-	orgName.style.height ="50%";
-	orgName.style.fontSize ="18px";
-	formOrg.style.backgroundColor = "#FFFFFF";
-	formOrgInput.style.position="relative";
-	formOrg.style.border = "solid 1px black";
-	closeSvg.style.backgroundImage = "url(\"../images/close2.svg\")"; 
-	closeSvg.style.backgroundRepeat = "no-repeat";
-	closeSvg.style.backgroundSize = "contain";
-	closeSvg.style.display = "flex";
-};
 
+
+formOrgInput.onfocus = function () {
+	if (!formOrgInput.classList.contains("focusInp") && !orgName.classList.contains("focusName") && !formOrg.classList.contains("focusFormRow") && 
+		!closeSvg.classList.contains("focusClose")) {
+		formOrgInput.classList.remove("blurInp");
+		orgName.classList.remove("blurName");
+		formOrg.classList.remove("blurFormRow");
+		closeSvg.classList.remove("blurClose");
+
+		formOrgInput.classList.add("focusInp");
+		orgName.classList.add("focusName");
+		formOrg.classList.add("focusFormRow");
+		closeSvg.classList.add("focusClose");
+		}
+};
 formOrgInput.onblur = function () {
-	if (formOrgInput.value.length === 0) {
-	formOrgInput.style.position="absolute";
-	formOrgInput.style.opacity="0";
-	formOrgInput.style.height="100%";
-	orgName.style.height ="100%";
-	orgName.style.zIndex ="0";
-	orgName.style.fontSize ="25px";
-	formOrg.style.backgroundColor = "rgb(238,242,247)";
-	formOrg.style.border = "solid 1px transparent";
-	closeSvg.style.background = "none";
-	closeSvg.style.display = "none";
-	}
+	if (!formOrgInput.classList.contains("blurInp") && !orgName.classList.contains("blurName") && !formOrg.classList.contains("blurFormRow") && 
+		!closeSvg.classList.contains("blurClose") && formOrgInput.value.length === 0) {
+
+		formOrgInput.classList.remove("focusInp");
+		orgName.classList.remove("focusName");
+		formOrg.classList.remove("focusFormRow");
+		closeSvg.classList.remove("focusClose");
+
+
+		formOrgInput.classList.add("blurInp");
+		orgName.classList.add("blurName");
+		formOrg.classList.add("blurFormRow");
+		closeSvg.classList.add("blurClose");
+
+
+
+
+		}
 };
 closeSvg.onclick = function () {
-	formOrgInput.style.position="absolute";
-	formOrgInput.style.opacity="0";
-	formOrgInput.style.height="100%";
-	orgName.style.height ="100%";
-	orgName.style.zIndex ="0";
-	orgName.style.fontSize ="25px";
-	formOrg.style.backgroundColor = "rgb(238,242,247)";
-	formOrg.style.border = "solid 1px transparent";
-	closeSvg.style.background = "none";
-	closeSvg.style.display = "none";
+	if (!formOrgInput.classList.contains("blurInp") && !orgName.classList.contains("blurName") && !formOrg.classList.contains("blurFormRow") && 
+		!closeSvg.classList.contains("blurClose")) {
+		formOrgInput.classList.remove("focusInp");
+		orgName.classList.remove("focusName");
+		formOrg.classList.remove("focusFormRow");
+		closeSvg.classList.remove("focusClose");
+
+
+		formOrgInput.classList.add("blurInp");
+		orgName.classList.add("blurName");
+		formOrg.classList.add("blurFormRow");
+		closeSvg.classList.add("blurClose");
+		}
 };
+
+
+/*Script for formRowName*/
+var formName = document.querySelector(".form-row_wrapper_name");
+var formNameInput = document.querySelector(".contName");
+var nameName = document.querySelector(".nameName");
+var closeSvgName = document.querySelector(".close-svg_name");
+
+
+
+formNameInput.onfocus = function () {
+	if (!formNameInput.classList.contains("focusInp") && !nameName.classList.contains("focusName") && !formName.classList.contains("focusFormRow") && 
+		!closeSvgName.classList.contains("focusClose")) {
+		formNameInput.classList.remove("blurInp");
+		nameName.classList.remove("blurName");
+		formName.classList.remove("blurFormRow");
+		closeSvgName.classList.remove("blurClose");
+
+		formNameInput.classList.add("focusInp");
+		nameName.classList.add("focusName");
+		formName.classList.add("focusFormRow");
+		closeSvgName.classList.add("focusClose");
+		}
+};
+formNameInput.onblur = function () {
+	if (!formNameInput.classList.contains("blurInp") && !nameName.classList.contains("blurName") && !formName.classList.contains("blurFormRow") && 
+		!closeSvgName.classList.contains("blurClose") && formNameInput.value.length === 0) {
+
+		formNameInput.classList.remove("focusInp");
+		nameName.classList.remove("focusName");
+		formName.classList.remove("focusFormRow");
+		closeSvgName.classList.remove("focusClose");
+
+		formNameInput.classList.add("blurInp");
+		nameName.classList.add("blurName");
+		formName.classList.add("blurFormRow");
+		closeSvgName.classList.add("blurClose");
+		}
+};
+closeSvgName.onclick = function () {
+	if (!formNameInput.classList.contains("blurInp") && !nameName.classList.contains("blurName") && !formName.classList.contains("blurFormRow") && 
+		!closeSvgName.classList.contains("blurClose")) {
+		formNameInput.classList.remove("focusInp");
+		nameName.classList.remove("focusName");
+		formName.classList.remove("focusFormRow");
+		closeSvgName.classList.remove("focusClose");
+
+		formNameInput.classList.add("blurInp");
+		nameName.classList.add("blurName");
+		formName.classList.add("blurFormRow");
+		closeSvgName.classList.add("blurClose");
+		}
+};
+
+

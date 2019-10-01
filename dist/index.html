@@ -296,17 +296,20 @@
 						<div class="for-row-org">
 							<div class="form-row_wrapper_org">
 								<label for="name2" id="label-for-org">
-						            <span id="orgName">Наименование организации:*</span>
-						            <input type="text" name="name2" id="org" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required autocomplete="off" />
+						            <span class="orgName">Наименование организации:*</span>
+						            <input type="text" name="name2" class="org" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required autocomplete="off" />
 					        	</label>
 					        	<div class="close-svg"></div>
 					        </div>	
 						</div>
 						<div class="for-row-name">
 							<div class="form-row_wrapper_name">
-					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
-					            <input type="text" name="name"  onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />	
-					        </div>
+								<label for="name2" id="label-for-name">
+						            <span class="nameName">Контактное лицо:*</span>
+						            <input type="text" name="name2" class="contName" onkeyup="checkParams()" placeholder="Иванов Петр Александрович" required autocomplete="off" />
+					        	</label>
+					        	<div class="close-svg_name"></div>
+					        </div>	
 						</div>
 						<div class="for-row-tel">
 							<div class="form-row_wrapper_tel">
