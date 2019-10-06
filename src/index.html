@@ -180,6 +180,7 @@
 				</div>
 			</div>
 			<div class="certificates">
+				<img src="images/Icons/arrow.svg" id="left-arr"  class="left-arrow" width="40px" height="40px">
 				<div class="names_certificates">Сертификаты и Лицензии</div>
 				<div class="peppermint peppermint-inactive" id="peppermint">
 					<div>
@@ -313,18 +314,35 @@
 						</div>
 						<div class="for-row-tel">
 							<div class="form-row_wrapper_tel">
-					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
-					            <input type="text" name="name" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+								<label for="tel" id="label-for-tel">
+						            <span class="nameTel">Телефон для связи:*</span>
+						            <input type="text" name="tel" class="contTel" onkeyup="checkParams()" placeholder="89310022730" required autocomplete="off" />
+					        	</label>
+								<div class="close-svg_tel"></div>
 					        </div>	
 						</div>
 						<div class="for-row-mail">
 							<div class="form-row_wrapper_mail">
-					            <label for="name">Наименование организации: <span style="color: red">*</span></label>
-					            <input type="text" name="name"  onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+								<label for="mail2" id="label-for-mail">
+						            <span class="nameMail">Электронная почта:*</span>
+						            <input type="text" name="tel" class="contMail" onkeyup="checkParams()" placeholder="example@example.ru" required autocomplete="off" />
+					        	</label>
+								<div class="close-svg_mail"></div>
 					        </div>	
 						</div>
 					</div>
 					<div class="form_footer">
+						<div class ="agreement-form">
+							<div class= "wrapper_agreement-form">
+								<input type="checkbox" name="">
+								<span>Я принимаю<a href="#"> условия передачи информации </a></span>
+							</div>
+						</div>
+						<div class ="send-form">
+							<div class ="wrapper_send-form">
+							<input type="submit" id="submit2" class="btn" value="Отправить" disabled />
+							</div>
+						</div>
 					</div>
 <!-- 				    <div class="form-row">
 				        <div class="form-group col-6">

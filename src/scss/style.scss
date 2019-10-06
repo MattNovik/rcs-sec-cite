@@ -3779,8 +3779,7 @@
 								span,
 								.contName {
 									flex-grow:1;
-									border:none;
-									
+									border:none;	
 								}
 								span {
 									display:flex;
@@ -3817,41 +3816,182 @@
 						}
 					}
 
-					.for-row-tel,
-					.for-row-mail {
+					.for-row-tel{
 						grid-area: tel;
 						width:100%;
 						display:flex;
-						justify-content: center;
+						justify-content: flex-start;
 						align-items: center;
 						.form-row_wrapper_tel {
-							margin-right:50px;
-						}
-						.form-row_wrapper_tel,
-						.form-row_wrapper_mail {
-							width:100%;
+							width:80%;
 							height:80%;
-							max-height: 100px;
+							max-height: 80px;
+							display: flex;
+							align-items: center;
 							border:solid 1px rgb(238,242,247);
 							border-radius: 10px;
 							background-color:rgb(238,242,247);
-
+							label {
+								width:calc(100% - 20px);
+								height:100%;
+								margin:0 0px 0 20px;
+								max-height: 80px;
+								display:flex;
+								flex-direction: column;
+								position: relative;
+								flex-grow: 1;
+								span,
+								.contTel {
+									flex-grow:1;
+									border:none;	
+								}
+								span {
+									display:flex;
+									align-items: center;
+									border-radius:10px;
+									font-size: 20px;
+									color:#bcbcbc;
+									width:100%;
+									height:100%;
+									transition: font-size .2s cubic-bezier(0,0,1,1), height .3s cubic-bezier(0,0,1,1);
+								}
+								.contTel {
+									position:absolute;
+									width:100%;
+									height:100%;
+									opacity:0;
+									font-size:15px;
+									transition: opacity 0s cubic-bezier(0,0,1,1),height 0s cubic-bezier(0,0,1,1);
+									border:none;
+									outline: none;
+									border-radius:none;
+								}
+							}
+							.close-svg_tel {
+								width:20px;
+								margin:0 20px;
+								height:20px;
+								background-size: cover;
+								z-index: 50;
+								cursor: pointer;
+								display:none;
+							}
 						}
 					}
 					.for-row-mail {
 						grid-area: mail;
+						width:100%;
+						display:flex;
+						justify-content: flex-end;
+						align-items: center;
 						.form-row_wrapper_mail {
-							margin-left:50px;
+							width:80%;
+							height:80%;
+							max-height: 80px;
+							display: flex;
+							align-items: center;
+							border:solid 1px rgb(238,242,247);
+							border-radius: 10px;
+							background-color:rgb(238,242,247);
+							label {
+								width:calc(100% - 20px);
+								height:100%;
+								margin:0 0px 0 20px;
+								max-height: 80px;
+								display:flex;
+								flex-direction: column;
+								position: relative;
+								flex-grow: 1;
+								span,
+								.contMail {
+									flex-grow:1;
+									border:none;	
+								}
+								span {
+									display:flex;
+									align-items: center;
+									border-radius:10px;
+									font-size: 20px;
+									color:#bcbcbc;
+									width:100%;
+									height:100%;
+									transition: font-size .2s cubic-bezier(0,0,1,1), height .3s cubic-bezier(0,0,1,1);
+								}
+								.contMail {
+									position:absolute;
+									width:100%;
+									height:100%;
+									opacity:0;
+									font-size:15px;
+									transition: opacity 0s cubic-bezier(0,0,1,1),height 0s cubic-bezier(0,0,1,1);
+									border:none;
+									outline: none;
+									border-radius:none;
+								}
+							}
+							.close-svg_mail {
+								width:20px;
+								margin:0 20px;
+								height:20px;
+								background-size: cover;
+								z-index: 50;
+								cursor: pointer;
+								display:none;
+							}
 						}
 					}
 
 				}
 				.form_footer {
-					width:100%;
+					width:70%;
 					height:100px;
 					max-height:100px;
 					border-radius: 0 0 8px 8px;
 					border-top:solid 1px #bcbcbc;
+					display:flex;
+					align-items:center;
+					.agreement-form {
+						flex-grow: 1;
+						display: flex;
+						justify-content: flex-start;
+						align-items:center;
+						a {
+							color:$primary-color;
+						}
+						.wrapper_agreement-form {
+							width:100%;
+							display: flex;
+							justify-content: space-around;
+							align-items:center;
+						}
+					}
+					.send-form {
+						min-width:150px;
+						height:70%;
+						flex-grow: 1;
+						display:flex;
+						justify-content:flex-end;
+						.wrapper_send-form {
+							width:80%;
+							height:100%;
+							max-height:80px;
+							display: flex;
+							justify-content:flex-end;
+							#submit2  {
+								width:150px;
+								height:100%;
+								outline: none;
+								border:solid 1px $primary-color;
+								background-color:$primary-color;
+								color:#FFF;
+								border-radius:5px;
+							}
+							#submit2:hover {
+								background-color:black;
+								transition: background-color .3s;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -3977,48 +4117,64 @@
 
 	*/
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label  .focusInp,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label  .focusInp {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label  .focusInp,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label  .focusInp,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label  .focusInp {
 		opacity:1;
 		height:50%;
 		position:relative;
 	}
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .focusName,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .focusName {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .focusName,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label .focusName,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label .focusName {
 		height:50%;
-		font-size:18px;
+		font-size:15px;
 	}
 
 .form .form_inner_wrapper .form_main .for-row-org .focusFormRow,
-.form .form_inner_wrapper .form_main .for-row-name .focusFormRow {
+.form .form_inner_wrapper .form_main .for-row-name .focusFormRow,
+.form .form_inner_wrapper .form_main .for-row-tel .focusFormRow,
+.form .form_inner_wrapper .form_main .for-row-mail .focusFormRow {
 		background-color:#FFFFFF;
 		border:solid 1px black;
 	}
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org  .focusClose,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name  .focusClose {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name  .focusClose,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel  .focusClose,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail  .focusClose {
 		background-image: url("/images/close2.svg");
 		background-repeat:no-repeat;
 		background-size:contain;
 		display:flex;
 	}
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .blurInp,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .blurInp {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .blurInp,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label .blurInp,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label .blurInp  {
 		position:absolute;
 		opacity:0;
 		height:100%;
 	}
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .blurName,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .blurName {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .blurName,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label .blurName,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label .blurName {
 		height:100%;
 		z-index:0;
-		font-size:25px;
+		font-size:18px;
 	}
 .form .form_inner_wrapper .form_main .for-row-org  .blurFormRow,
-.form .form_inner_wrapper .form_main .for-row-name  .blurFormRow {
+.form .form_inner_wrapper .form_main .for-row-name  .blurFormRow,
+.form .form_inner_wrapper .form_main .for-row-tel  .blurFormRow,
+.form .form_inner_wrapper .form_main .for-row-mail  .blurFormRow  {
 		background-color:rgb(238,242,247);
 		border:solid 1px transparent;
 	}
 .form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org  .blurClose,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name  .blurClose {
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name  .blurClose
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel  .blurClose,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail  .blurClose {
 		background:none;
 		display:none;
 	}
@@ -4382,6 +4538,7 @@
 							letter-spacing: -0.4px;
 							margin:10px 0 0 0;
 						}
+
 						.to_order {
 							width:250px;
 							height:45px;
@@ -4401,6 +4558,20 @@
 						height:550px;
 						display:flex;
 						flex-direction: column;
+						position:relative;
+						.slider_fourth {
+							display:none;
+						}
+						.left-arrow {
+							width:40px;
+							height:40px;
+							position:absolute;
+							display: block;
+							left:0;
+							top:50%;
+							transform: rotate(180deg);
+							z-index: 100;
+						}							
 						.names_certificates {
 							width:100%;
 							height:100px;
