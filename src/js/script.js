@@ -96,10 +96,9 @@ services.onmouseout = function () {
 };
 
 //запустить Peppermint и сохранить API
-var slider = //сохранить ссылки на HTML-ноды
-    rightArr = document.getElementById('right-arr'),
-    leftArr = document.getElementById('left-arr'),
-    getSlidesNumberButton = document.getElementById('getslidesnumber');
+var rightArr = document.getElementById('right-arr');
+var leftArr = document.getElementById('left-arr');
+var getSlidesNumberButton = document.getElementById('getslidesnumber');
 
 //клик по `#right-arr` переключит на следующий слайд
 rightArr.addEventListener('click', slider.next, false);
