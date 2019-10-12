@@ -42,7 +42,7 @@
 											</a></li>
 										</ul>
 									</li>
-									<li  class="documents"><a href="html/documents/" class="link" >Документы</a></li>
+									<li  class="documents"><a href="#" class="link" >Документы</a></li>
 									<li  class="vacancy"><a href="#" class="link" >Вакансии</a></li>
 									<li  class="about"><a href="#" class="link" >О нас</a></li>
 								</ul>
@@ -52,7 +52,7 @@
 									<ul role="menu">
 										<li><a href="#" class="main" role="menuitem">Главная</a></li>
 										<li><a href="#" class="services" role="menuitem">Услуги</a></li>
-										<li><a href="html/documents/" class="documents" role="menuitem">Документы</a></li>
+										<li><a href="#" class="documents" role="menuitem">Документы</a></li>
 										<li><a href="#" class="vacancy" role="menuitem">Вакансии</a></li>
 										<li><a href="#" class="about" role="menuitem">О нас</a></li>
 									</ul>
@@ -61,45 +61,6 @@
 							<div class="navToggle" id="navToggle" role="navigation">
 							</div>
 					</div>
-				<div class="slogan_form">
-					<div class="slogan_block">
-						<h1 class="slogan">ОБЕСПЕЧИМ<br>БЕЗОПАСНОСТЬ<br> НАШИХ КЛИЕНТОВ</h1>
-					</div>
-					<div class="form_block">
-						<div class="cancel_backcall"><img src="images/close2.svg" alt="" width="20px" height="20px" class="close_backcall"></div>
-						<form action="" method="post" class="form_backcall">
-							<h3 class="backcall">Обратная связь</h3>
-							<input type="text" class="name" name="name" required placeholder="Имя">
-							<input type="email" class="mail" name="mail" required placeholder="Email">
-							<input type="tel" class="telephone" name="tel" required placeholder="(___) ___-__-__">
-							<input type="text" class="company" required placeholder="Компания">
-							<p class="agreement">
-								<input type="checkbox" id="agree" value="agree" required>
-								<label for="agree">Согласие на обработку персональных данных</label>
-							</p>
-							<input id ="submit" type="submit" class="submit_backcall" value="Перезвоните">
-						</form>
-					</div>
-					<button type="button" class="btn_backcall">Перезвоните мне</button>
-					<script>
-						 $("#submit").click(function() { 
-						 var name = $('input[name=name]').val(); 
-						 var tel = $('input[name=tel]').val();
-						 var otpravka = true;
-						 if(name==""){ 
-						 otpravka = false;
-						 }
-						 if(tel==""){ 
-						 otpravka = false;
-						 }
-						 if(otpravka) 
-						 {
-						 dannie = {'polz_name':name, 'polz_tel':tel};
-						 $.post('send.php', dannie,'json')	 
-						 }
-						 });
-					</script>
-				</div>
 			</div>
 		</header>
 		<main>
@@ -297,62 +258,6 @@
 			<div class="map">
 				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31772721edd99bb6383629160112376daef996c3a2d142176db19d4b9017196f&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
 			</div>			
-			<form class="form" method="post" action="">
-				<div class="form_inner_wrapper">
-					<div class="cancel"><img src="images/close.svg" alt="" width="20px" height="20px" class="close"></div>
-					<div class="form_head"><span class="form_main_name">Заявка на проведение работ</span>
-					</div>
-					<div class="form_main">
-						<div class="for-row-org">
-							<div class="form-row_wrapper_org">
-								<label for="name2" id="label-for-org">
-						            <span class="orgName">Наименование организации:*</span>
-						            <input type="text" name="name2" class="org"  placeholder="Форма собственности и наименовании" required autocomplete="off" />
-					        	</label>
-					        	<div class="close-svg"></div>
-					        </div>	
-						</div>
-						<div class="for-row-name">
-							<div class="form-row_wrapper_name">
-								<label for="name2" id="label-for-name">
-						            <span class="nameName">Контактное лицо:*</span>
-						            <input type="text" name="name2" class="contName"  placeholder="Иванов Петр Александрович" required autocomplete="off" />
-					        	</label>
-					        	<div class="close-svg_name"></div>
-					        </div>	
-						</div>
-						<div class="for-row-tel">
-							<div class="form-row_wrapper_tel">
-								<label for="tel" id="label-for-tel">
-						            <span class="nameTel">Телефон для связи:*</span>
-						            <input type="text" name="tel" class="contTel"  placeholder="89310022730" required autocomplete="off" />
-					        	</label>
-								<div class="close-svg_tel"></div>
-					        </div>	
-						</div>
-						<div class="for-row-mail">
-							<div class="form-row_wrapper_mail">
-								<label for="mail2" id="label-for-mail">
-						            <span class="nameMail">Электронная почта:*</span>
-						            <input type="text" name="tel" class="contMail"  placeholder="example@example.ru" required autocomplete="off" />
-					        	</label>
-								<div class="close-svg_mail"></div>
-					        </div>	
-						</div>
-					</div>
-					<div class="form_footer">
-						<div class ="agreement-form">
-							<div class= "wrapper_agreement-form">
-								<input type="checkbox" name="">
-								<span>Я принимаю<a href="#"> условия передачи информации </a></span>
-							</div>
-						</div>
-						<div class ="send-form">
-							<div class ="wrapper_send-form">
-							<input type="submit" id="submit2" class="btn" value="Отправить" disabled />
-							</div>
-						</div>
-					</div>
 <!-- 				<div class="form-row">
 				        <div class="form-group col-6">
 				            <label for="name">Наименование организации: <span style="color: red">*</span></label>
