@@ -105,11 +105,7 @@ rightArr.addEventListener('click', slider.next, false);
 
 //клик по `#left-arr` переключит на предыдущий слайд
 leftArr.addEventListener('click', slider.prev, false);
-
-//клик по `#getslidesnumber` покажет количество слайдов
-getSlidesNumberButton.addEventListener('click', function() {
-  alert('There are ' + slider.getSlidesNumber() + ' slides');
-}, false);
+;
 
 
 var formOrg = document.querySelector(".form-row_wrapper_org");
@@ -126,7 +122,7 @@ formOrgInput.onfocus = function () {
 		orgName.classList.remove("blurName");
 		formOrg.classList.remove("blurFormRow");
 		closeSvg.classList.remove("blurClose");
-
+	
 		formOrgInput.classList.add("focusInp");
 		orgName.classList.add("focusName");
 		formOrg.classList.add("focusFormRow");
@@ -160,7 +156,6 @@ closeSvg.onclick = function () {
 		orgName.classList.remove("focusName");
 		formOrg.classList.remove("focusFormRow");
 		closeSvg.classList.remove("focusClose");
-
 
 		formOrgInput.classList.add("blurInp");
 		orgName.classList.add("blurName");
@@ -324,4 +319,17 @@ closeSvgMail.onclick = function () {
 		formMail.classList.add("blurFormRow");
 		closeSvgMail.classList.add("blurClose");
 		}
+};
+
+var formBlock = document.querySelector(".form_block");
+var btnBackcall = document.querySelector(".btn_backcall");
+var cancelBackcall = document.querySelector(".cancel_backcall");
+
+btnBackcall.onclick = function () {
+	formBlock.classList.toggle("open_backcall");
+};
+cancelBackcall.onclick = function () {
+	if (formBlock.classList.contains("open_backcall")) {
+		formBlock.classList.remove("open_backcall");
+	}
 };

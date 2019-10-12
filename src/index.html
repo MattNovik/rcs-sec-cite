@@ -46,6 +46,7 @@
 									<li  class="vacancy"><a href="#" class="link" >Вакансии</a></li>
 									<li  class="about"><a href="#" class="link" >О нас</a></li>
 								</ul>
+							</nav>
 							<div class="overlay">
 								<nav class="top-menu-mob">
 									<ul role="menu">
@@ -65,6 +66,7 @@
 						<h1 class="slogan">ОБЕСПЕЧИМ<br>БЕЗОПАСНОСТЬ<br> НАШИХ КЛИЕНТОВ</h1>
 					</div>
 					<div class="form_block">
+						<div class="cancel_backcall"><img src="images/close2.svg" alt="" width="20px" height="20px" class="close_backcall"></div>
 						<form action="" method="post" class="form_backcall">
 							<h3 class="backcall">Обратная связь</h3>
 							<input type="text" class="name" name="name" required placeholder="Имя">
@@ -78,6 +80,7 @@
 							<input id ="submit" type="submit" class="submit_backcall" value="Перезвоните">
 						</form>
 					</div>
+					<button type="button" class="btn_backcall">Перезвоните мне</button>
 					<script>
 						 $("#submit").click(function() { 
 						 var name = $('input[name=name]').val(); 
@@ -185,13 +188,14 @@
 				<div class="names_certificates">Сертификаты и Лицензии</div>
 				<div class="peppermint peppermint-inactive" id="peppermint">
 					<div>
-						<a href="Dogovor.pdf" target="_blank"><picture class="slider_first">
+						<a href="Dogovor.pdf" target="_blank">
+							<picture class="slider_first">
 							<source srcset="images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
 							<source srcset="images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
 							<source srcset="images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
 							<img src="images/certifacate/sertificate_b_4.jpg" width="300px" height="400px"  alt="MDNs">
-						</picture>
-					</a>
+							</picture>
+						</a>
 						<picture class="slider_second">
 							<source srcset="images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
 							<source srcset="images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
@@ -303,7 +307,7 @@
 							<div class="form-row_wrapper_org">
 								<label for="name2" id="label-for-org">
 						            <span class="orgName">Наименование организации:*</span>
-						            <input type="text" name="name2" class="org" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required autocomplete="off" />
+						            <input type="text" name="name2" class="org"  placeholder="Форма собственности и наименовании" required autocomplete="off" />
 					        	</label>
 					        	<div class="close-svg"></div>
 					        </div>	
@@ -312,7 +316,7 @@
 							<div class="form-row_wrapper_name">
 								<label for="name2" id="label-for-name">
 						            <span class="nameName">Контактное лицо:*</span>
-						            <input type="text" name="name2" class="contName" onkeyup="checkParams()" placeholder="Иванов Петр Александрович" required autocomplete="off" />
+						            <input type="text" name="name2" class="contName"  placeholder="Иванов Петр Александрович" required autocomplete="off" />
 					        	</label>
 					        	<div class="close-svg_name"></div>
 					        </div>	
@@ -321,7 +325,7 @@
 							<div class="form-row_wrapper_tel">
 								<label for="tel" id="label-for-tel">
 						            <span class="nameTel">Телефон для связи:*</span>
-						            <input type="text" name="tel" class="contTel" onkeyup="checkParams()" placeholder="89310022730" required autocomplete="off" />
+						            <input type="text" name="tel" class="contTel"  placeholder="89310022730" required autocomplete="off" />
 					        	</label>
 								<div class="close-svg_tel"></div>
 					        </div>	
@@ -330,7 +334,7 @@
 							<div class="form-row_wrapper_mail">
 								<label for="mail2" id="label-for-mail">
 						            <span class="nameMail">Электронная почта:*</span>
-						            <input type="text" name="tel" class="contMail" onkeyup="checkParams()" placeholder="example@example.ru" required autocomplete="off" />
+						            <input type="text" name="tel" class="contMail"  placeholder="example@example.ru" required autocomplete="off" />
 					        	</label>
 								<div class="close-svg_mail"></div>
 					        </div>	
