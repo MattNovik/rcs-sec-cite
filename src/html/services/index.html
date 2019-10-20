@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RCS</title>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet" href="css/peppermint.required.css">
+		<link rel="shortcut_icon" href="images/logo/favicon.png" type="image/png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Jura:700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="blur"></div>
+			<div class="head_inner-wrapper">
+					<div class="top_menu_wrapper"></div>
+					<div class="logo_top-menu">
+							<div class="logo">
+								<a href="#"><img src="images/logo_rcs.png" alt="региональны центр сертификации" width="450" height ="220" class="logo_pic">
+								</a>
+								<a href="#"><img src="images/logo_rcs3_mob.png" alt="региоsальны центр сертификации" width="100" height ="50" class="logo_pic_mob">
+								</a>
+							</div>
+							<nav class="top-menu">
+								<ul class="under_menu">
+									<li class="main_page"><a href="../../" class="link" >Главная</a></li>
+									<li class="services" id="services">  <a href="#" class="link2" >Услуги </a>
+										<ul class="more_services">
+											<li><a href="#"> Лифты
+											</a>
+											<li><a href="#" > Эскалаторы
+											</a></li>
+											<li><a href="#"> Электроизмерения
+											</a></li>
+											<li><a href="#" > Промышленная безопасность
+											</a></li>
+											<li><a href="#" > Неразрушающий контроль и безопасность
+											</a></li>
+											<li><a href="#" > Заявки на проведение работ
+											</a></li>
+										</ul>
+									</li>
+									<li  class="documents"><a href="#" class="link" >Документы</a></li>
+									<li  class="vacancy"><a href="#" class="link" >Вакансии</a></li>
+									<li  class="about"><a href="#" class="link" >О нас</a></li>
+								</ul>
+							</nav>
+							<div class="overlay">
+								<nav class="top-menu-mob">
+									<ul role="menu">
+										<li><a href="#" class="main" role="menuitem">Главная</a></li>
+										<li><a href="#" class="services" role="menuitem">Услуги</a></li>
+										<li><a href="#" class="documents" role="menuitem">Документы</a></li>
+										<li><a href="#" class="vacancy" role="menuitem">Вакансии</a></li>
+										<li><a href="#" class="about" role="menuitem">О нас</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="navToggle" id="navToggle" role="navigation">
+							</div>
+					</div>
+			</div>
+		</header>
+		<main>
+			<div class="make-order">
+				<div class="make_order_now">ОСТАВЬТЕ ЗАЯВКУ ПРЯМО СЕЙЧАС</div>
+				<div class="order">
+					<button class="to_order" id="order">ЗАПОЛНИТЬ</button>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="bot_contacts">
+				<div class="place">
+					<p>197342,г. Санкт-Петербург, Наб. Черной Речки, д.41, БЦ "Прогресс-Сити", оф.504</p>
+					<img src="images/contacts/for-locate.svg" width="20px" height="20px" alt="">
+				</div>
+				<div class="tel_number">
+					<p>+7 (812) 313-51-15</p>
+					<img src="images/contacts/telephone.svg" width="20px" height="20px" alt="">
+				</div>
+				<div class="email_post">
+					<p>office@rcscenter.ru</p>
+					<img src="images/contacts/message.svg" width="20px" height="20px" alt="">
+				</div>
+			</div>
+			<div class="information">
+				<p class="inf">About us</p>
+				<p>Товарищи! реализация намеченных плановых заданий требуют от нас анализа модели развития.</p>
+			</div>
+			<div class="about_us">
+				<p class="about">About us</p>
+				<p>Товарищи! реализация намеченных плановых заданий требуют от нас анализа модели развития.</p>
+			</div>
+			<div class="terms">© 2019 . All rights reserved. Theme by Godicks.</div>
+			<div class="map">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31772721edd99bb6383629160112376daef996c3a2d142176db19d4b9017196f&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>			
+<!-- 				<div class="form-row">
+				        <div class="form-group col-6">
+				            <label for="name">Наименование организации: <span style="color: red">*</span></label>
+				            <input type="text" name="name2" id="name" onkeyup="checkParams()" placeholder="Форма собственности и наименовании" required />
+				        </div>
+				        <div class="form-group col-6">
+				            <label for="mail">Контактное лицо: <span style="color: red">*</span></label>
+				            <input type="email" name="email" id="email" onkeyup="checkParams()" placeholder="Как к вам обращаться?" required />
+				        </div>
+				    </div>
+				    <div class="form-group">
+				        <label for="phone">Телефон: <span style="color: red">*</span></label>
+				        <input type="tel" name="phone" id="phone" onkeyup="checkParams()" placeholder="+7 (931) 11 11 111" required />
+				    </div>
+				    <div class="form-group">
+						<label for="choose-service">Выберите услугу:</label>
+						<select id="choose-service" name="choose-service" />
+						    <option value="Лифты">Лифты</option>
+						    <option value="Эскалаторы, инвалидные подъемники, траволаторы">Эскалаторы, инвалидные подъемники, траволаторы</option>
+						    <option value="Электроизмерения объектов зданий, сооружений">Электроизмерения объектов зданий, сооружений</option>
+						    <option value="Экспертиза промышленной безопасности">Экспертиза промышленной безопасности</option>
+						    <option value="Неазрушающий контроль и диагностика">Неазрушающий контроль и диагностика</option>
+						</select>
+				    </div>
+				    <div class="form-group">
+				        <label for="website">Укажите ваш сайт: </label>
+				        <input type="text" name="website" placeholder="Адрес вашего сайта" pattern="(http|https)://.+" />
+				    </div>
+				    <div class="form-group">
+				        <label for="product">Продукт: </label>
+				        <input type="text" name="product" onkeyup="checkParams()" placeholder="Продукт" />
+				    </div>
+				    <div class="form-group">
+				        <label for="services">Выберите услугу: </label>
+				        <select name="services">
+				            <option value="none">Услуга не выбрана</option>
+				            <option value="1">Услуга_</option>
+				            <option value="2">Услуга_</option>
+				            <option value="3">Услуга_</option>
+				            <option value="4">Услуга_</option>
+				            <option value="5">Услуга_</option>
+				            <option value="6">Услуга_</option>
+				            <option value="7">Услуга_</option>
+				            <option value="8">Услуга_</option>
+				        </select>
+				    </div>
+				    <div class="area_for_text">
+				        <label for="message">Доп. информация:</label>
+				        <textarea name="message"></textarea>
+				    </div>
+				    <div class="send_reset">
+				        <input type="submit" id="submit2" class="btn" value="Отправить" disabled />
+				        <button type="button" class="btn" onclick="form.reset()">Очистить</button>
+				    </div>
+				    <div class="requared_rows">
+				        <small>Поля отмеченные звездочкой <span style="color: red">*</span> являются обязательными для заполнения.</small>
+				    </div> -->
+			    </div>
+			</form>
+				<script>
+						$("#submit2").click(function() { 
+						var name2 = $('input[name=name2]').val(); 
+						var tel2 = $('input[name=phone]').val();
+						var mail2 = $('input[name=email]').val();
+						var otpravka = true;
+						if(name2==""){ 
+						otpravka = false;
+						}
+						if(tel2==""){ 
+						otpravka = false;
+						}
+						if(otpravka) 
+						{
+						dannie = {'polz_name':name2, 'polz_tel':tel2, 'polz_mail':mail2};
+						$.post('feedback.php', dannie,'json')	 
+						}
+						});
+				</script>			
+		</footer>
+		<script src="js/peppermint.min.js"></script>
+		<script src="js/script.min.js"></script>
+	</body>
+</html>

@@ -18,19 +18,19 @@ gulp.task("html-documents", function() {
     .pipe(gulp.dest("dist/html/documents"));
 });
 
-gulp.task("html-to", function() {
-    return gulp.src("src/html/to/*.html")
-    .pipe(gulp.dest("dist/html/to"));
+gulp.task("html-vacancy", function() {
+    return gulp.src("src/html/vacancy/*.html")
+    .pipe(gulp.dest("dist/html/vacancy"));
 });
 
-gulp.task("html-sved", function() {
-    return gulp.src("src/html/sved/*.html")
-    .pipe(gulp.dest("dist/html/sved"));
+gulp.task("html-services", function() {
+    return gulp.src("src/html/services/*.html")
+    .pipe(gulp.dest("dist/html/services"));
 });
 
-gulp.task("html-obsled", function() {
-    return gulp.src("src/html/obsled/*.html")
-    .pipe(gulp.dest("dist/html/obsled"));
+gulp.task("html-aboutUs", function() {
+    return gulp.src("src/html/aboutUs/*.html")
+    .pipe(gulp.dest("dist/html/aboutUs"));
 });
 
 gulp.task("html-cert", function() {
@@ -89,8 +89,8 @@ gulp.task('sass_documents', function() { // Создаем таск "sass"
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass_to', function() { // Создаем таск "sass"
-  return gulp.src(['src/html/to/scss/**/*.scss']) // Берем источник
+gulp.task('sass_vacancy', function() { // Создаем таск "sass"
+  return gulp.src(['src/html/vacancy/scss/**/*.scss']) // Берем источник
     .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
     .pipe(autoprefixer({
        browsers: ['last 2 versions'],
@@ -98,12 +98,12 @@ gulp.task('sass_to', function() { // Создаем таск "sass"
      }))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/html/to/css')) // Выгружаем результата в папку css
+    .pipe(gulp.dest('dist/html/vacancy/css')) // Выгружаем результата в папку css
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass_sved', function() { // Создаем таск "sass"
-  return gulp.src(['src/html/sved/scss/**/*.scss']) // Берем источник
+gulp.task('sass_services', function() { // Создаем таск "sass"
+  return gulp.src(['src/html/services/scss/**/*.scss']) // Берем источник
     .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
     .pipe(autoprefixer({
        browsers: ['last 2 versions'],
@@ -111,12 +111,12 @@ gulp.task('sass_sved', function() { // Создаем таск "sass"
      }))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/html/sved/css')) // Выгружаем результата в папку css
+    .pipe(gulp.dest('dist/html/services/css')) // Выгружаем результата в папку css
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass_obsled', function() { // Создаем таск "sass"
-  return gulp.src(['src/html/obsled/scss/**/*.scss']) // Берем источник
+gulp.task('sass_aboutUs', function() { // Создаем таск "sass"
+  return gulp.src(['src/html/aboutUs/scss/**/*.scss']) // Берем источник
     .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
     .pipe(autoprefixer({
        browsers: ['last 2 versions'],
@@ -124,7 +124,7 @@ gulp.task('sass_obsled', function() { // Создаем таск "sass"
      }))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/html/obsled/css')) // Выгружаем результата в папку css
+    .pipe(gulp.dest('dist/html/aboutUs/css')) // Выгружаем результата в папку css
     .pipe(browserSync.stream());
 });
 
@@ -166,9 +166,16 @@ gulp.task("scripts", function() {
 gulp.task('watch', function() {
     gulp.watch('src/scss/**/*.scss', gulp.parallel('sass'));
     gulp.watch('src/html/documents/scss/**/*.scss', gulp.parallel('sass_documents'));
+    gulp.watch('src/html/vacancy/scss/**/*.scss', gulp.parallel('sass_vacancy'));
+    gulp.watch('src/html/services/scss/**/*.scss', gulp.parallel('sass_services'));
+    gulp.watch('src/html/aboutUs/scss/**/*.scss', gulp.parallel('sass_aboutUs'));
     gulp.watch("src/*.html", gulp.parallel('html'));
+	gulp.watch("src/html/documents/*.html", gulp.parallel('html-documents'));
+	gulp.watch("src/html/vacancy/*.html", gulp.parallel('html-vacancy'));
+	gulp.watch("src/html/services/*.html", gulp.parallel('html-services')); 
+	gulp.watch("src/html/aboutUs/*.html", gulp.parallel('html-aboutUs'));   
     gulp.watch("src/js/*.js", gulp.parallel('scripts'));
-   	gulp.watch("src/html/documents/*.html", gulp.parallel('html-documents'));    
+     
 });
 
-gulp.task("default", gulp.parallel("html","html-documents","html-to","html-sved","html-obsled","html-cert","html-cert2", "sass","sass_documents","sass_to","sass_sved", "sass_obsled", "sass_cert","sass_cert2","scripts","browserSync", "watch"));
+gulp.task("default", gulp.parallel("html","html-documents","html-vacancy","html-services","html-aboutUs","html-cert","html-cert2", "sass","sass_documents","sass_vacancy","sass_services", "sass_aboutUs", "sass_cert","sass_cert2","scripts","browserSync", "watch"));

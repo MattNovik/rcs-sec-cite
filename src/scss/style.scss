@@ -35,10 +35,10 @@
 	a:hover {
 		color:$primary-color;
 	}
-	.form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label  .focusInp,
-.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label  .focusInp,
-.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label  .focusInp,
-.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label  .focusInp {
+.form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .org.focusInp,
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label  .contName.focusInp,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label  .contTel.focusInp,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label  .contMail.focusInp {
 		opacity:1;
 		height:50%;
 		position:relative;
@@ -51,10 +51,10 @@
 		font-size:15px;
 	}
 
-.form .form_inner_wrapper .form_main .for-row-org .focusFormRow,
-.form .form_inner_wrapper .form_main .for-row-name .focusFormRow,
-.form .form_inner_wrapper .form_main .for-row-tel .focusFormRow,
-.form .form_inner_wrapper .form_main .for-row-mail .focusFormRow {
+.form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org.focusFormRow,
+.form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name.focusFormRow,
+.form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel.focusFormRow,
+.form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail.focusFormRow {
 		background-color:#FFFFFF;
 		border:solid 1px black;
 	}
@@ -67,7 +67,7 @@
 		background-size:contain;
 		display:flex;
 	}
-.form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .blurInp,
+.form .form_inner_wrapper .form_main .for-row-org .form-row_wrapper_org label .org.blurInp,
 .form .form_inner_wrapper .form_main .for-row-name .form-row_wrapper_name label .blurInp,
 .form .form_inner_wrapper .form_main .for-row-tel .form-row_wrapper_tel label .blurInp,
 .form .form_inner_wrapper .form_main .for-row-mail .form-row_wrapper_mail label .blurInp  {
@@ -4970,7 +4970,7 @@
 								}
 								.org {
 									position:absolute;
-									width:100%;
+									width:90%;
 									height:100%;
 									opacity:0;
 									font-size:15px;
@@ -5037,7 +5037,7 @@
 								}
 								.contName {
 									position:absolute;
-									width:100%;
+									width:90%;
 									height:100%;
 									opacity:0;
 									font-size:15px;
@@ -5101,7 +5101,7 @@
 								}
 								.contTel {
 									position:absolute;
-									width:100%;
+									width:90%;
 									height:100%;
 									opacity:0;
 									font-size:15px;
@@ -5163,7 +5163,7 @@
 								}
 								.contMail {
 									position:absolute;
-									width:100%;
+									width:90%;
 									height:100%;
 									opacity:0;
 									font-size:15px;
@@ -5361,7 +5361,6 @@
 
 	*/
 
-
 		html {
 			width:100vw;
 			max-width:100%;
@@ -5530,7 +5529,7 @@
 								  border-bottom: 2px solid $primary-color;
 								  transition: 0s ease opacity .4s, .2s ease width , .2s ease height .2s;
 								}
-								.services:hover:before,
+/*								.services:hover:before,
 								.services:hover:after{
 								  height: 100%;
 								  width: 100%;
@@ -5541,7 +5540,7 @@
 								}
 								.services:hover:after {
 									transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;
-								}
+								}*/
 								.services:hover {
 								}
 								.main_page:hover,

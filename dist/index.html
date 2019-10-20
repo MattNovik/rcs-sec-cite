@@ -18,15 +18,15 @@
 					<div class="top_menu_wrapper"></div>
 					<div class="logo_top-menu">
 							<div class="logo">
-								<a href="#"><img src="images/logo_rcs.png" alt="региональны центр сертификации" width="450" height ="220" class="logo_pic">
+								<a href="/"><img src="images/logo_rcs.png" alt="региональны центр сертификации" width="450" height ="220" class="logo_pic">
 								</a>
 								<a href="#"><img src="images/logo_rcs3_mob.png" alt="региоsальны центр сертификации" width="100" height ="50" class="logo_pic_mob">
 								</a>
 							</div>
 							<nav class="top-menu">
-								<ul class="under_menu">
-									<li class="main_page"><a href="#" class="link" >Главная</a></li>
-									<li class="services" id="services">  <a href="#" class="link2" >Услуги </a>
+								<ul class="under_menu"
+>									<li class="main_page"><a href="/" class="link" >Главная</a></li>
+									<li class="services" id="services">  <a href="html/services" class="link2" >Услуги </a>
 										<ul class="more_services">
 											<li><a href="#"> Лифты
 											</a>
@@ -43,8 +43,8 @@
 										</ul>
 									</li>
 									<li  class="documents"><a href="html/documents/" class="link" >Документы</a></li>
-									<li  class="vacancy"><a href="#" class="link" >Вакансии</a></li>
-									<li  class="about"><a href="#" class="link" >О нас</a></li>
+									<li  class="vacancy"><a href="html/vacancy/" class="link" >Вакансии</a></li>
+									<li  class="about"><a href="html/aboutUs/" class="link" >О нас</a></li>
 								</ul>
 							</nav>
 							<div class="overlay">
@@ -52,7 +52,7 @@
 									<ul role="menu">
 										<li><a href="#" class="main" role="menuitem">Главная</a></li>
 										<li><a href="#" class="services" role="menuitem">Услуги</a></li>
-										<li><a href="html/documents/" class="documents" role="menuitem">Документы</a></li>
+										<li><a href="#" class="documents" role="menuitem">Документы</a></li>
 										<li><a href="#" class="vacancy" role="menuitem">Вакансии</a></li>
 										<li><a href="#" class="about" role="menuitem">О нас</a></li>
 									</ul>
@@ -72,7 +72,7 @@
 							<input type="text" class="name" name="name" required placeholder="Имя">
 							<input type="email" class="mail" name="mail" required placeholder="Email">
 							<input type="tel" class="telephone" name="tel" required placeholder="(___) ___-__-__">
-							<input type="text" class="company" required placeholder="Компания">
+							<input type="text" class="company" name="compBack" required placeholder="Компания">
 							<p class="agreement">
 								<input type="checkbox" id="agree" value="agree" required>
 								<label for="agree">Согласие на обработку персональных данных</label>
@@ -85,6 +85,8 @@
 						 $("#submit").click(function() { 
 						 var name = $('input[name=name]').val(); 
 						 var tel = $('input[name=tel]').val();
+						 var email = $('input[name=mail]').val(); 
+						 var comp = $('input[name=compBack]').val();							 
 						 var otpravka = true;
 						 if(name==""){ 
 						 otpravka = false;
@@ -94,8 +96,8 @@
 						 }
 						 if(otpravka) 
 						 {
-						 dannie = {'polz_name':name, 'polz_tel':tel};
-						 $.post('send.php', dannie,'json')	 
+						 dannie = {'polz_name':name, 'polz_tel':tel, 'polz_mail':email, 'polz_comp':comp};
+						 $.post('sendSTMP.php', dannie,'json') 
 						 }
 						 });
 					</script>
