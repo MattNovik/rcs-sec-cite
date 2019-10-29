@@ -4632,15 +4632,15 @@
 					}
 					.head_inner-wrapper {
 					    z-index: 100;
-						background-color:  rgba(22, 46, 174, .2);
+						background-color:  rgba(22, 46, 174, .3);
 					
 					}
 					.blur {
 					    z-index: 1;
-					    background-image: url("../images/4.jpg");
-					    background-size: 100% 90%;
+					    background-image: url("../../../images/main_des_short.jpg");
+					    background-size: 100% 100%;
 					    background-repeat: no-repeat; 
-					    filter: blur(3px);
+					    filter: blur(1px);
 					    
 						 
 					}
@@ -4652,7 +4652,7 @@
 						top:0;
 						bottom:0;
 						right:0;
-						background-color: rgba(255,255,255,0.7);
+						background-color: rgba(255,255,255,.4);
 					}
 					.logo_top-menu {
 						width:100%;
@@ -4665,7 +4665,7 @@
 							max-width:50%;
 							display: flex;
 							justify-content: flex-start;
-							z-index:100;
+							z-index:130;
 							.logo_pic {
 								margin-left:0px;
 							}
@@ -4845,6 +4845,10 @@
 							width:80%;
 							li {
 								margin:5px 0;
+							}
+							h2 {
+								margin:10px 0;
+								text-indent: 10px;
 							}
 						}
 					}

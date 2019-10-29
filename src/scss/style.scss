@@ -538,8 +538,8 @@
 					
 					}
 					.blur {
-					    background-image: url("../images/4.jpg");
-					    background-size: 100% 90%;
+					    background-image: url("../images/main_mob.jpg");
+					    background-size: 100% 100%;
 					    background-repeat: no-repeat; 
 					    filter: blur(3px);
 					    z-index: 1;  
@@ -1774,8 +1774,8 @@
 					}
 					.blur {
 					    z-index: 1;
-					    background-image: url("../images/4.jpg");
-					    background-size: 100% 90%;
+					    background-image: url("../images/main_mob.jpg");
+					    background-size: 100% 100%;
 					    background-repeat: no-repeat; 
 					    filter: blur(3px);
 						 
@@ -5377,11 +5377,12 @@
 					height:900px;
 					position:relative;
 					margin:-5px -3px;
+					border:none;
 					.head_inner-wrapper,
 					.blur {
 					    position: absolute;
 					    width:calc(100% + 6px);
-						height:1000px;
+						height:900px;
 					    left: 0;
 					    top: 0;
 					    bottom:0;
@@ -5389,15 +5390,15 @@
 					}
 					.head_inner-wrapper {
 					    z-index: 100;
-						background-color:  rgba(22, 46, 174, .2);
+						background-color:  rgba(22, 46, 174, .4);
 					
 					}
 					.blur {
 					    z-index: 1;
-					    background-image: url("../images/4.jpg");
-					    background-size: 100% 90%;
+					    background-image: url("../images/main_des.jpg");
+					    background-size: 100% 100%;
 					    background-repeat: no-repeat; 
-					    filter: blur(3px);
+					    filter: blur(2px);
 						 
 					}
 					.top_menu_wrapper {
@@ -5408,7 +5409,8 @@
 						top:0;
 						bottom:0;
 						right:0;
-						background-color: rgba(255,255,255,0.7);
+						background-color: rgba(255,255,255,.6);
+						filter:blur(3px);
 					}
 					.logo_top-menu {
 						width:100%;
@@ -5421,7 +5423,7 @@
 							max-width:50%;
 							display: flex;
 							justify-content: flex-start;
-							z-index:100;
+							z-index:120;
 							.logo_pic {
 								margin-left:0px;
 							}
