@@ -1,4 +1,10 @@
 "use strict"
+$(document).ready(function(){
+  $(".telephone").inputmask({"mask": "+7(###) ###-####"}); //specifying options
+  $(".contTel").inputmask({"mask": "+7(###) ###-####"}); //specifying options
+});
+/*Slider peppermint */
+
 var slider = Peppermint(document.getElementById('peppermint'),{
 	dots: true,
 	slideshow: true,
@@ -54,6 +60,8 @@ var cancel = document.querySelector(".cancel");
 	}
 	cancel.onclick = function () {
 		form.style.visibility = "hidden";
+		selectServicesLift.classList.remove("openServices");
+		selectServicesEscalator.classList.remove("openServices");
 		html.style.overflow = "auto";		
 		html.style.overflowY = "auto";
 		html.style.overflowX = "hidden";
@@ -77,6 +85,7 @@ var overlay = document.querySelector('.overlay')
 		this.classList.toggle("active");
 		overlay.classList.toggle('open')
 	}
+	
 /* Close and open backcall form at header*/
 
 var services = document.querySelector(".services");
@@ -144,14 +153,12 @@ formOrgInput.onblur = function () {
 		formOrg.classList.add("blurFormRow");
 		closeSvg.classList.add("blurClose");
 
-
-
-
 		}
 };
 closeSvg.onclick = function () {
 	if (!formOrgInput.classList.contains("blurInp") && !orgName.classList.contains("blurName") && !formOrg.classList.contains("blurFormRow") && 
 		!closeSvg.classList.contains("blurClose")) {
+
 		formOrgInput.classList.remove("focusInp");
 		orgName.classList.remove("focusName");
 		formOrg.classList.remove("focusFormRow");
@@ -333,3 +340,25 @@ cancelBackcall.onclick = function () {
 		formBlock.classList.remove("open_backcall");
 	}
 };
+
+/* add script for form lift */
+var selectServices = document.getElementById("check");
+var selectServicesLift = document.querySelector(".services_row-lift");
+var selectServicesEscalator = document.querySelector(".services_row-escalator");
+
+selectServices.addEventListener('change', function () {
+	if (selectServices.value == "lift") {
+		selectServicesLift.classList.add("openServices");
+		selectServicesEscalator.classList.remove("openServices");
+	} else if (selectServices.value == "escalator") {
+		selectServicesEscalator.classList.add("openServices");
+		selectServicesLift.classList.remove("openServices");
+	} 	else {
+		selectServicesLift.classList.remove('openServices');
+		selectServicesEscalator.classList.remove('openServices');
+
+	}
+})
+
+
+
