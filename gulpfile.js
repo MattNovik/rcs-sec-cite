@@ -28,6 +28,11 @@ gulp.task("html-services", function() {
     .pipe(gulp.dest("dist/html/services"));
 });
 
+gulp.task("html-services_lifts", function() {
+    return gulp.src("src/html/services/lifts/*.html")
+    .pipe(gulp.dest("dist/html/services/lifts"));
+});
+
 gulp.task("html-aboutUs", function() {
     return gulp.src("src/html/aboutUs/*.html")
     .pipe(gulp.dest("dist/html/aboutUs"));
@@ -59,6 +64,8 @@ gulp.task('browserSync', function() {
   gulp.watch("dist/images/*.+(jpg|jpeg|png|gif|svg)").on('change', browserSync.reload);
   gulp.watch("dist/js/*.js").on('change', browserSync.reload);
   gulp.watch("dist/html/documеnts/*.html").on('change', browserSync.reload);
+  gulp.watch("dist/html/services//lifts/*.html").on('change', browserSync.reload);
+  gulp.watch("dist/html/services//lifts/css/*.css").on('change', browserSync.reload);
   gulp.watch("dist/html/documеnts/css/*.css").on('change', browserSync.reload);
 });
 
@@ -115,6 +122,19 @@ gulp.task('sass_services', function() { // Создаем таск "sass"
     .pipe(browserSync.stream());
 });
 
+gulp.task('sass_services-lifts', function() { // Создаем таск "sass"
+  return gulp.src(['src/html/services/lifts/scss/**/*.scss']) // Берем источник
+    .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+    .pipe(autoprefixer({
+       browsers: ['last 2 versions'],
+       cascade: false
+     }))
+    .pipe(cssnano())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/html/services/lifts/css')) // Выгружаем результата в папку css
+    .pipe(browserSync.stream());
+});
+
 gulp.task('sass_aboutUs', function() { // Создаем таск "sass"
   return gulp.src(['src/html/aboutUs/scss/**/*.scss']) // Берем источник
     .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
@@ -168,14 +188,16 @@ gulp.task('watch', function() {
     gulp.watch('src/html/documents/scss/**/*.scss', gulp.parallel('sass_documents'));
     gulp.watch('src/html/vacancy/scss/**/*.scss', gulp.parallel('sass_vacancy'));
     gulp.watch('src/html/services/scss/**/*.scss', gulp.parallel('sass_services'));
+      gulp.watch('src/html/services/lifts/scss/**/*.scss', gulp.parallel('sass_services-lifts'));
     gulp.watch('src/html/aboutUs/scss/**/*.scss', gulp.parallel('sass_aboutUs'));
     gulp.watch("src/*.html", gulp.parallel('html'));
 	gulp.watch("src/html/documents/*.html", gulp.parallel('html-documents'));
 	gulp.watch("src/html/vacancy/*.html", gulp.parallel('html-vacancy'));
 	gulp.watch("src/html/services/*.html", gulp.parallel('html-services')); 
+    gulp.watch("src/html/services/lifts/*.html", gulp.parallel('html-services_lifts')); 
 	gulp.watch("src/html/aboutUs/*.html", gulp.parallel('html-aboutUs'));   
-    gulp.watch("src/js/*.js", gulp.parallel('scripts'));
+  gulp.watch("src/js/*.js", gulp.parallel('scripts'));
      
 });
 
-gulp.task("default", gulp.parallel("html","html-documents","html-vacancy","html-services","html-aboutUs","html-cert","html-cert2", "sass","sass_documents","sass_vacancy","sass_services", "sass_aboutUs", "sass_cert","sass_cert2","scripts","browserSync", "watch"));
+gulp.task("default", gulp.parallel("html","html-documents","html-vacancy","html-services","html-services_lifts","html-aboutUs","html-cert","html-cert2", "sass","sass_documents","sass_vacancy","sass_services","sass_services-lifts", "sass_aboutUs", "sass_cert","sass_cert2","scripts","browserSync", "watch"));

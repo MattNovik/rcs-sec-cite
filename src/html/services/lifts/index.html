@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RCS</title>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.min.css">
+		<link rel="stylesheet" href="../../../css/peppermint.required.css">
+		<link rel="shortcut_icon" href="../../../images/logo/favicon.png" type="image/png">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../../../js/jquery.inputmask.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Jura:700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="blur"></div>
+			<div class="head_inner-wrapper">
+					<div class="top_menu_wrapper"></div>
+					<div class="logo_top-menu">
+							<div class="logo">
+								<a href="/"><img src="../../../images/logo_rcs.png" alt="региональный центр сертификации" width="450" height ="220" class="logo_pic">
+								</a>
+								<a href="/"><img src="../../../images/logo_rcs3_mob.png" alt="региональный центр сертификации" width="100" height ="50" class="logo_pic_mob">
+								</a>
+							</div>
+							<nav class="top-menu">
+								<ul class="under_menu">
+									<li class="main_page"><a href="../../../" class="link" >Главная</a></li>
+									<li class="services" id="services">  <a href="../" class="link2" >Услуги </a>
+										<ul class="more_services">
+											<li><a href="#"> Лифты
+											</a>
+											<li><a href="#" > Эскалаторы
+											</a></li>
+											<li><a href="#"> Электроизмерения
+											</a></li>
+											<li><a href="#" > Промышленная безопасность
+											</a></li>
+											<li><a href="#" > Неразрушающий контроль
+											</a></li>
+											<li><a href="#" > Заявки на проведение работ
+											</a></li>
+										</ul>
+									</li>
+									<li  class="documents"><a href="../../documents/" class="link" >Документы</a></li>
+									<li  class="vacancy"><a href="../../vacancy/" class="link" >Вакансии</a></li>
+									<li  class="about"><a href="../../aboutUs/" class="link" >О нас</a></li>
+								</ul>
+							</nav>
+							<div class="overlay">
+								<nav class="top-menu-mob">
+									<ul role="menu">
+										<li><a href="../../../" class="main" role="menuitem">Главная</a></li>
+										<li><a href="../" class="services" role="menuitem">Услуги</a></li>
+										<li><a href="../../documents/" class="documents" role="menuitem">Документы</a></li>
+										<li><a href="../../vacancy/" class="vacancy" role="menuitem">Вакансии</a></li>
+										<li><a href="../../aboutUs/" class="about" role="menuitem">О нас</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="navToggle" id="navToggle" role="navigation">
+							</div>
+					</div>
+				<div class="slogan_form">
+					<div class="slogan_block">
+						<h1 class="slogan">ОБЕСПЕЧИМ<br>БЕЗОПАСНОСТЬ<br> НАШИХ КЛИЕНТОВ</h1>
+					</div>
+					<div class="form_block">
+						<div class="cancel_backcall"><img src="../../../images/close2.svg" alt="" width="20px" height="20px" class="close_backcall"></div>
+						<form action="" method="post" class="form_backcall">
+							<h3 class="backcall">Обратная связь</h3>
+							<input type="text" class="name" name="name" required pattern="[A-Za-zА-Яа-яЁё]{1,30}" placeholder="Имя" title="Только буквенные значения">
+							<input type="email" class="mail" name="mail" placeholder="Email">
+							<input type="tel" class="telephone" name="tel" required placeholder="+7(___) ___-____">
+							<input type="text" class="company" name="compBack" placeholder="Компания">
+							<p class="agreement">
+								<input type="checkbox" id="agree" value="agree" required>
+								<label for="agree">Согласие на обработку персональных данных</label>
+							</p>
+							<button id ="submit" type="submit" class="submit_backcall" value="Перезвоните" >Перезвоните</button>
+						</form>
+					</div>
+					<button type="button" class="btn_backcall" >Перезвоните мне</button>
+					<script>
+						 $("#submit").click(function() { 
+						 var name = $('input[name=name]').val(); 
+						 var tel = $('input[name=tel]').val();
+						 var email = $('input[name=mail]').val(); 
+						 var comp = $('input[name=compBack]').val();
+						 var submitBut = $('submit_backcall');							 
+						 var otpravka = true;
+						 if(name==""){ 
+						 otpravka = false;
+						 }
+						 if(tel==""){ 
+						 otpravka = false;
+						 }
+						 if(otpravka) 
+						 {
+						 dannie = {'polz_name':name, 'polz_tel':tel, 'polz_mail':email, 'polz_comp':comp};
+						 $.post('../../../sendSTMP.php', dannie,'json') 
+						 }
+						 });
+					</script>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="lifts_wrapper">
+				<div class="lifts">
+					<h2>Лифты</h2>
+					<h3>Перечень  услуг:</h3>
+						<ul>
+							<li>  Полное техническое освидетельствование 
+								<p>
+									<p><b>Полное техническое освидетельствование:</b> Оценка соответствия лифта, проводимая перед вводом в эксплуатацию.
+									</p>
+
+									<p><strong>После выполнения модернизации или монтажа нового лифта</strong> специализированная лифтовая организация, проводившая модернизацию или монтаж, проводит проверку функционирования лифта и подает заявку о готовности лифта к проведению полного технического освидетельствования в аккредитованную испытательную лабораторию (центр).
+									</p>
+									<p><strong>Аккредитованная испытательная лаборатория (центр)</strong> после получения заявки заключает договор с заявителем (управляющей компанией, владельцем, генеральным подрядчиком и др.), на основании которого проводит оценку соответствия в форме полного технического освидетельствования. Полное техническое освидетельствование лифта проводят специалисты аккредитованной испытательной лаборатории (центра) с участием представителей организации, выполнившей монтаж или модернизацию лифта, и (при необходимости) в присутствии представителя организации, выполнившей строительные работы, связанные с монтажом (модернизацией) лифта. Заявитель обеспечивает организацию проведения оценки соответствия, в том числе доступ специалистов аккредитованной испытательной лаборатории (центра) на объект установки лифта.
+									</p>
+									<p>Управление лифтом, переключения и иные операции на лифте, необходимые для проведения испытаний и измерений, осуществляет монтажная организация.
+									</p>
+									<p><strong>При полном техническом освидетельствовании лифта осуществляют:</strong></p>
+										<ol class="lifts_number_ul" type="1">
+											<li>1. Проверку наличия комплекта технической документации, поставляемой с лифтом;</li>
+											<li>2. роверку соответствия смонтированного лифта действующему сертификату соответствия;</li>
+											<li>3. Проверку соответствия модернизированного лифта применимым требованиям национальных стандартов и сводов правил;</li>
+											<li>4. Проверку соответствия установки оборудования лифта документации по монтажу (модернизации);</li>
+											<li>5. Проверку функционирования устройств безопасности лифта;</li>
+											<li>6. Визуальный осмотр, испытание изоляции электрических сетей и электрооборудования и измерительный контроль заземления (зануления) оборудования лифта;</li>
+											<li>7. Испытание сцепления тяговых элементов с канатоведущим шкивом (барабаном трения) и испытание тормозной системы на лифте с электрическим приводом;</li>
+											<li>8. Испытание герметичности гидроцилиндра и трубопровода на лифте с гидравлическим приводом.</li>
+										</ol>
+									<p><strong>Если при полном техническом освидетельствовании выявлены не соответствия лифта требованиям национальных стандартов и сводов правил,</strong> специалист аккредитованной испытательной лаборатории (центра) оформляет <strong>«Акт выявленных несоответствий лифта»</strong> и передает его представителю монтажной организации, выполнившей монтаж (модернизацию) лифта.</p>
+
+									<p>Акт технического освидетельствования лифта испытательный центр не выдает до устранения дефектов, неисправностей, несоответствий, создающих недопустимый уровень риска при эксплуатации лифта, в соответствии с приложением Н ГОСТ Р 53782-2010, указывают в таблице 1 Акта выявленных несоответствий лифта. После устранения монтажной организацией дефектов, неисправностей, несоответствий, указанных в таблице 1 Акта выявленных несоответствий лифта, аккредитованная испытательная лаборатория (центр) осуществляет проверку устранения этих дефектов, неисправностей, несоответствий. При необходимости испытательная лаборатория (центр) проводит повторную проверку функционирования устройств безопасности и испытания. При положительных результатах проверки (испытания) специалист аккредитованной испытательной лаборатории (центра) делает отметку об устранении дефектов, неисправностей, несоответствий в таблице 1 Акта выявленных несоответствий лифта.
+									</p>
+
+									<p>При положительных результатах полного технического освидетельствования специалист аккредитованной испытательной лаборатории (центра) делает запись в паспорте лифта о результатах проверок, испытаний, измерений и оформляет Акт технического освидетельствования лифта. Оригиналы протоколов испытаний и Акта технического освидетельствования лифта передают монтажной организации.
+									</p>	
+									<p>Монтажная организация, до принятия декларации о соответствии, устраняет дефекты, несоответствия, неисправности, указанные в таблице 2 Акта выявленных несоответствий лифта, и оформляет Акт выполнения корректирующих мероприятий по форме, приведенной в приложении Л ГОСТ Р 53782-2010.
+									</p>
+									<p>На основании собственных доказательств, Акта технического освидетельствования лифта и при условии выполнения корректирующих мероприятий по устранению дефектов, несоответствий, неисправностей, указанных в таблице 2 Акта выявленных несоответствий лифта, монтажная организация принимает декларацию о соответствии лифта требованиям технического регламента.
+									</p>
+									<p>Декларация о соответствии подлежит регистрации в органе по сертификации, аккредитованном в установленном порядке.
+									</p>	
+								</p>
+							</li>
+							<li>  Периодическое техническое освидетельствование (ссылка на стр.)</li>
+							<li>  Частичное освидетельствование (ссылка на стр.)</li>
+							<li>  Обследование лифтов, отработавших назначенный срок службы (ссылка на стр.)</li>
+							<li>  Изготовление дубликатов паспортов лифтов(ссылка на стр.)</li>
+							<li>  Подготовка документации для регистрации деклараций (ссылка на стр.)*</li> 
+							<li>  Неразрушающий контроль(ссылка на стр.)</li>
+						</ul>
+					<h3>Документы</h3>
+					-всплывающее фото+ссылка на реестр(№1, №2, №8)
+					<h3>Испытательный центр</h3>
+					-ссылка на страницу
+					<h3>Орган по сертификации</h3>
+					-ссылка на страницу
+					<h3>Экспертная организация</h3>
+					-ссылка на страницу
+				</div>
+			</div>
+<!-- 			<div class="how-we-work">
+				<div class="opacity"></div>
+				<div class="how_we_work_inner-wrapper">
+					<div class="title">Как мы работаем</div>
+					<div class="explanation">Повседневная практика показывает, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Таким образом дальнейшее развитие различных форм деятельности требуют определения и уточнения систем массового участия.</div>
+					<div class="steps_of_work">
+						<div class="step_first">
+							<div class="step_request">							
+							</div>
+							<div class="request">Заявка</div>
+						</div>
+						<hr class="first_hr">
+						<div class="step_second">
+							<div class="step_contract">
+							</div>
+							<div class="contract">Договор</div>
+						</div>
+						<hr class="second_hr">
+						<div class="step_third">
+							<div class="step_work">
+							</div>
+							<div class="work">Работы</div>
+						</div>
+						<hr class="third_hr">
+						<div class="step_fourth">
+							<div class="step_documents">
+							</div>
+							<div class="documents">Документы</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="make-order">
+				<div class="make_order_now">ОСТАВЬТЕ ЗАЯВКУ ПРЯМО СЕЙЧАС</div>
+				<div class="order">
+					<button class="to_order" id="order">ЗАПОЛНИТЬ</button>
+				</div>
+			</div>
+			<div class="certificates">
+				<img src="../../../images/Icons/arrow.svg" id="left-arr"  class="left-arrow" width="40px" height="40px">
+				<img src="../../../images/Icons/arrow.svg" id="right-arr"  class="right-arrow" width="40px" height="40px">
+				<div class="names_certificates">Сертификаты и Лицензии</div>
+				<div class="peppermint peppermint-inactive" id="peppermint">
+					<div>
+						<a href="Dogovor.pdf" target="_blank">
+							<picture class="slider_first">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_4.jpg" width="300px" height="400px"  alt="MDNs">
+							</picture>
+						</a>
+						<picture class="slider_second">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_third">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_fourth">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_2.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>						
+					</div>
+					<div>
+						<picture class="slider_first">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_4.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_second">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_third">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_fourth">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_2.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>						
+					</div>
+					<div>
+						<picture class="slider_first">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_4.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_second">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_third">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_3.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>
+						<picture class="slider_fourth">
+							<source srcset="../../../images/certifacate/sertificate_b_3.jpg" media="(max-width: 600px)">
+							<source srcset="../../../images/certifacate/sertificate_b_2.jpg" media="(max-width: 1024px)">
+							<source srcset="../../../images/certifacate/sertificate_b_1.jpg" media="(max-width: 1366px)">
+							<img src="../../../images/certifacate/sertificate_b_2.jpg" width="300px" height="400px"  alt="MDNs">
+						</picture>						
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="bot_contacts">
+				<div class="place">
+					<p>197342,г. Санкт-Петербург, Наб. Черной Речки, д.41, БЦ "Прогресс-Сити", оф.504</p>
+					<img src="../../../images/contacts/for-locate.svg" width="20px" height="20px" alt="">
+				</div>
+				<div class="tel_number">
+					<p>+7 (812) 313-51-15</p>
+					<img src="../../../images/contacts/telephone.svg" width="20px" height="20px" alt="">
+				</div>
+				<div class="email_post">
+					<p>office@rcscenter.ru</p>
+					<img src="../../../images/contacts/message.svg" width="20px" height="20px" alt="">
+				</div>
+			</div>
+			<div class="information">
+				<p class="inf">Мы всё сделаем для вас</p>
+				<p>Мы занимаемся тем, что налаживаем вашу жизнь и делаем её безопасней</p>
+			</div>
+			<div class="about_us">
+				<p class="about">About us</p>
+				<p>Товарищи! реализация намеченных плановых заданий требуют от нас анализа модели развития.</p>
+			</div>
+			<div class="terms">© 2019 . All rights reserved. Theme by Godicks.</div>
+			<div class="map">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A31772721edd99bb6383629160112376daef996c3a2d142176db19d4b9017196f&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>			
+			<form class="form" method="post" action="">
+				<div class="form_inner_wrapper">
+					<div class="cancel"><img src="../../../images/close.svg" alt="" width="20px" height="20px" class="close"></div>
+					<div class="form_head"><span class="form_main_name">Заявка на проведение работ</span>
+					</div>
+					<div class="form_main">
+						<div class="for-row-org">
+							<div class="form-row_wrapper_org">
+								<label for="name2" id="label-for-org">
+						            <span class="orgName">Наименование организации:*</span>
+						            <input type="text" name="compName" class="org"  placeholder="Форма собственности и наименование" required autocomplete="off" />
+					        	</label>
+					        	<div class="close-svg"></div>
+					        </div>	
+						</div>
+						<div class="for-row-name">
+							<div class="form-row_wrapper_name">
+								<label for="name2" id="label-for-name">
+						            <span class="nameName">Контактное лицо:*</span>
+						            <input type="text" name="contName" class="contName"  placeholder="Иванов Петр Александрович" required autocomplete="off" />
+					        	</label>
+					        	<div class="close-svg_name"></div>
+					        </div>	
+						</div>
+						<div class="for-row-tel">
+							<div class="form-row_wrapper_tel">
+								<label for="tel" id="label-for-tel">
+						            <span class="nameTel">Телефон для связи:*</span>
+						            <input type="text" name="contTel" class="contTel"  placeholder="+7(###) ###-####" required autocomplete="off" />
+					        	</label>
+								<div class="close-svg_tel"></div>
+					        </div>	
+						</div>
+						<div class="for-row-mail">
+							<div class="form-row_wrapper_mail">
+								<label for="mail2" id="label-for-mail">
+						            <span class="nameMail">Электронная почта:*</span>
+						            <input type="text" name="contMail" class="contMail"  placeholder="example@example.ru" required autocomplete="off" />
+					        	</label>
+								<div class="close-svg_mail"></div>
+					        </div>	
+						</div>
+					</div>
+					<div class="form_services">
+						<div class="services_row-select">
+							<div class="form-row_wrapper_services">
+								<select id="check" name="check" class="form_select_services" required style="font-family: Cuprum,arial;">
+									<option value="" selected="">Выберите услугу:</option>			
+									<option value="lift">Лифты</option>
+									<option value="escalator">Эскалаторы, инвалидные подъемники, траволаторы</option>
+									<option value="Электроизмерения объектов зданий, сооружений">Электроизмерения объектов зданий, сооружений</option>
+									<option value="Экспертиза промышленной безопасности">Экспертиза промышленной безопасности</option>
+									<option value="Неазрушающий контроль и диагностика">Неазрушающий контроль и диагностика</option>
+								</select>							
+							</div>
+						</div>
+						<div class="services_row-lift">
+							<div class="form-row_wrapper_lift">
+								<select id="check2" name="check2" class="form_select_lift" style="font-family: Cuprum,arial;">
+									<option value="Выбеите услугу" selected="">Уточните пожалуйста:</option>			
+									<option value="Лифты">Полное техническое освидетельствование</option>
+									<option value="Эскалаторы, инвалидные подъемники, траволаторы">Периодическое техническое освидетельствование</option>
+									<option value="Электроизмерения объектов зданий, сооружений">Частичное освидетельствование</option>
+									<option value="Экспертиза промышленной безопасности">Обследование лифтов, отработавших назначенный срок службы</option>
+									<option value="Неазрушающий контроль и диагностика">Изготовление дубликатов паспортов лифтов</option>
+								</select>							
+							</div>
+						</div>
+						<div class="services_row-escalator">
+							<div class="form-row_wrapper_escalator">
+								<select id="check3" name="check3" class="form_select_escalator"   style="font-family: Cuprum,arial;">
+									<option value="Выбеите услугу" selected="">Уточните пожалуйста:</option>			
+									<option value="Лифты">Полное техническое освидетельствование</option>
+									<option value="Эскалаторы, инвалидные подъемники, траволаторы">Техническое освидетельствование в течение назначенного срока службы</option>
+									<option value="Электроизмерения объектов зданий, сооружений">Обследование, отработавших назначенный срок службы</option>
+								</select>							
+							</div>
+						</div>
+					</div>
+					<div class="form_footer">
+						<div class ="agreement-form">
+							<div class= "wrapper_agreement-form">
+								<input type="checkbox" id="checkboxForm" name="" required="">
+								<span>Я принимаю<a href="#"> условия передачи информации </a></span>
+							</div>
+						</div>
+						<div class ="send-form">
+							<div class ="wrapper_send-form">
+							<button type="submit" id="submit2" class="btn" value="Отправить" />Отправить</button>
+							</div>
+						</div>
+					</div>
+			    </div>
+			</form>
+				<script>
+						$("#submit2").click(function() { 
+						var name2 = $('input[name=contName]').val();
+						var comp2 = $('input[name=compName]').val();  
+						var tel2 = $('input[name=contTel]').val();
+						var mail2 = $('input[name=contMail]').val();
+						var serviceMain = $('select[name=check]').val();
+						var serviceLift = $('select[name=check2]').val();
+						var serviceEscalator = $('select[name=check3]').val();
+						var otpravka = true;
+						if(name2==""){ 
+							otpravka = false;
+						}
+						if(tel2==""){ 
+							otpravka = false;
+						}
+						if (comp2 =="") {
+							otpravka = false;
+						}
+						if (mail2 =="") {
+							otpravka = false
+						}
+						if (serviceMain == "") {
+							otpravka = false;
+						}
+						if(otpravka) 
+						{
+						dannie = {'polz_name':name2, 'polz_tel':tel2, 'polz_mail':mail2, 'polz_comp':comp2, 'polz_serviceMain':serviceMain, 'polz_serviceLift':serviceLift, 'polz_serviceEscalator':serviceEscalator};
+						$.post('../../../feedback.php', dannie,'json')	 
+						}
+						});
+				</script>			
+		</footer>
+		<script src="../../../js/peppermint.min.js"></script>
+		<script src="../../../js/script.min.js"></script>
+	</body>
+</html>

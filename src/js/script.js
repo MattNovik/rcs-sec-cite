@@ -90,9 +90,10 @@ var overlay = document.querySelector('.overlay')
 
 var services = document.querySelector(".services");
 var formBackcall = document.querySelector(".form_backcall");
-
+var x = window.matchMedia("(min-device-width: 481px)")
 services.onmouseover= function () {
-    if (!formBackcall.classList.contains('close')) {
+
+    if (x.matches && !formBackcall.classList.contains('close')) {
         formBackcall.classList.remove('stand');
         formBackcall.classList.add('close');
     }
